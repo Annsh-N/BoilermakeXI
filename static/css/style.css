@@ -139,7 +139,7 @@
 
 .brand {
    border-radius: 0;
-   width: 250px;
+   width: 268px;
    text-align: left;
    padding: 0;
    margin: 0;
@@ -150,7 +150,7 @@
    top: 0;
    left: 0;
    width: 100%;
-   background-color: #205169;
+   background-color: #05A85C;
    padding: 0;
    z-index: 100;
 }
@@ -190,7 +190,7 @@ ul.topnav li a, ul.short-topnav li a, ul.account-topnav li a {
    text-align: center;
    text-decoration: none;
    transition: background-color 0.3s;
-   margin-left: 5px;
+   margin-left: 20px;
    margin-right: 5px;
    margin-top: 4px;
    padding: 0;
@@ -218,10 +218,8 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 #nav #logo {display: inline-block; height: 50px; width: 50px; background-image: url("../img/logo.png"); background-size: cover; margin-top: 4px; margin-left: 10px; margin-bottom: 2px;}
 #nav ul {display: inline-block; margin: 0;}
 #nav #title {display: inline-block; position: relative; width: 250px; cursor: pointer; height: 50px; }
-#nav #nametitle {font-family: Antic; display: inline-block; position: absolute; left: 65px; top: 2px; font-size: 30px; width: 180px; text-align: center; color: #52BAF7}
-#nav #nametitle::before {content: 'sanjayrajawat'}
-#nav #slogan {font-family: Arial; display: inline-block; position: absolute; left: 65px; bottom: 9px; text-transform: uppercase; width: 177px; font-size: 10px; letter-spacing: 3px; text-align: center; padding-left: 3px; color: #52BAF7}
-#nav #slogan::before {content: 'simplified learning'}
+#nav #nametitle {font-family: Antic; display: inline-block; position: absolute; left: 65px; top: 12px; font-size: 30px; width: 195px; text-align: center; color: white}
+#nav #nametitle::before {content: 'Campus Crunch'}
 
 .nav-ripple-green {
   border: solid #6EB8F2 2px;
