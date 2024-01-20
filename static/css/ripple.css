@@ -1,0 +1,65 @@
+.ripple-light, .ripple-white, .ripple-dark, .ripple-yellow, .ripple-brand, .ripple-medium-dark, .ripple-wide-dark, .ripple-wide-light {
+  position: relative;
+  border-radius: 50px;
+  border: none;
+  overflow: hidden;
+  font-family: Karla;
+  font-size: 12pt;
+  cursor: pointer
+}
+.ripple-light, .ripple-brand {
+  background-color: #205169;
+  color: white;
+}
+.ripple-dark, .ripple-yellow {
+  background-color: transparent;
+  padding: 10px 16px;
+  transition: 0.3s;
+  color: white;
+  overflow: hidden;
+  border-radius: 50px;
+  transition: background-image 1s linear 0.3s, background-color 0.2s linear, color 0.2s linear;
+}
+.ripple-dark:hover, .ripple-yellow:hover {
+  background-color: #D1963A;
+  color: #000;
+}
+.ripple-light:focus, .ripple-white:focus, .ripple-dark:focus, .ripple-yellow:focus, .ripple-brand:focus, .ripple-medium-dark:focus, .ripple-wide-dark:focus, .ripple-wide-light:focus {
+  outline: none
+}
+.background-light-circle, .background-white-circle, .background-dark-circle, .background-yellow-circle, .background-brand-circle, .background-medium-dark-circle, .background-wide-dark-circle, .background-wide-light-circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0.2;
+  top: 20px;
+  left: 45px;
+  transition: transform 0.5s ease-in-out, opacity 0.3s;
+  border-radius: 50%;
+  transform: scale(0);
+  z-index: 1
+}
+.background-light-circle {
+  background: rgba(255, 255, 255, 0.6);
+}
+.background-white-circle {
+  background: rgba(0, 0, 0, 0.6);
+}
+.background-yellow-circle {
+  background: rgba(0, 0, 0, 0.6);
+}
+.background-dark-circle {
+  background: rgba(0, 0, 0, 0.6);
+}
+.background-brand-circle {
+  background: rgba(255, 255, 255, 0.6);
+}
+.background-medium-dark-circle {
+  background: rgba(0, 0, 0, 0.6);
+}
+.background-wide-dark-circle {
+  background: rgba(0, 0, 0, 0.6);
+}
+.background-wide-light-circle {
+  background: rgba(255, 255, 255, 0.6);
+}

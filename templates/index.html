@@ -1,25 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html>
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <meta name="description" content="An economical way to ace economics!" />
+    <meta property="og:title" content="Home - Sanjay Rajawat">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="An economical way to ace economics!" />
+    <meta property="og:url" content="https://sanjayrajawat.com" />
+    <meta property="og:site_name" content="Sanjay Rajawat" />
+    <meta property="og:image" content="https://sanjayrajawat.com/images/card.jpeg" />
 
-</head>
-<body>
-    <div class="navbar navbar-expand sticky-top" style="background-color:#05A85C">
-        <div class="container">
-            <a href="#" class="navbar-brand" >
-                <img src="images/logo.png" width="50">
-            </a>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link" style="color:white">Log In</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" style="color:white">Sign Up</a></li>
-            </ul>
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon" />
+    <title>Home - Sanjay Rajawat</title>
+    <link rel="stylesheet" href="../static/css/ripple.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/index.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/style-1.css" type="text/css">
+    <meta name="keywords" content="Economics,IGCSE,A Levels,0455,past papers,revision notes,school,cambridge">
+  </head>
+  <body>
+    <div id="menu-background"></div>
+    <button id="short-menu-close" class="material-icons">close</button>
+    <div class="nav-holder"></div>
+    <div id='nav'>
+      <div id="nav-align">
+        <div id="title">
+          <a href="/">
+            <button class="ripple-brand brand">
+              <div id="logo"></div>
+              <div id="name">
+                <div id="nametitle"></div>
+                <div id="slogan"></div>
+              </div>
+            </button>
+          </a>
         </div>
+        <ul class="topnav">
+            <li><a href="https://sanjayrajawat.com/topic-quizzes/"><button class="ripple-yellow">Topic Quizzes</button></a></li>
+            <li><a href="https://sanjayrajawat.com/past-papers/"><button class="ripple-yellow">Past Papers</button></a></li>
+            <li><a href="https://sanjayrajawat.com/revision-notes/"><button class="ripple-yellow">Revision Notes</button></a></li>
+        </ul>
+          <ul class="topnav" style="float: right">
+            <li id="nav-join-li"><button id="open-join-menu" class="ripple-yellow nav-ripple-blue">Join</button></li>
+            <li id="nav-login-li"><button id="open-login-menu" class="ripple-yellow nav-ripple-blue">Login</button></li>
+          </ul>
+          <ul class="account-topnav" style="float: right">
+            <li id="nav-profile-li">
+              <div class="dropdown">
+                <button onclick="showProfileDropDown()" id="profile-dropbutton" class="ripple-yellow nav-ripple-blue dropbtn"><span class="material-icons-outlined">account_circle</span></button>
+                <div id="profile-dropdown-content" class="dropdown-content">
+                  <a href="https://sanjayrajawat.com/settings/" class="dropdown-link" id="dropdown-link-settings">Settings</a>
+                  <a href="https://sanjayrajawat.com/logout/" class="dropdown-link" id="dropdown-link-logout">Logout</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        <ul class="short-topnav" style="float: right">
+          <li><button id="topnav-menu" class="ripple-yellow material-icons-outlined menu">menu</button></li>
+        </ul>
+      </div>
+      <div id="short-menu" class="pop-up-menu">
+        <div id="short-menu-reference">
+          <div class="short-menu-links">
+              <a href="https://sanjayrajawat.com/topic-quizzes/"><button class="ripple-yellow short-menu-link">Topic Quizzes</button></a>
+              <a href="https://sanjayrajawat.com/past-papers/"><button class="ripple-yellow short-menu-link">Past Papers</button></a>
+              <a href="https://sanjayrajawat.com/revision-notes/"><button class="ripple-yellow short-menu-link">Revision Notes</button></a>
+          </div>
+          <div class="short-menu-links" id="bottom-short-menu-links">
+            <button id="open-short-join-menu" class="ripple-yellow short-menu-link">Join</button>
+            <button id="open-short-login-menu" class="ripple-yellow short-menu-link">Login</button>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+    <div id="slide-1">
+      <div class="container" id="container">
+        <div class="slide-left" id="slide-left">
+          <div id="slide-1-topic">An<br /><span class="blue">economical</span> way<br />to ace <span class="blue">economics</span></div>
+          <div id="slide-1-body">Over 50 quizzes and 1000 questions organised by topic.</div>
+          <div id="slide-1-button-container">
+            <a href="topic-quizzes"><button class="ripple-dark slide-1-button">Topic Quizzes</button></a>
+            <a href="revision-notes"><button class="ripple-dark slide-1-button-2">Revision Notes</button></a>
+          </div>
+        </div>
+        <img src="https://sanjayrajawat.com/images/index/laptop_up_top.png" width="420px">
+      </div>
+    </div>
+    <div id="slide-2">
+      <div class="container">
+        <div class="slide-left">
+          <div class="index-topic"><span class="underline">Topic Questions</span></div>
+          <div class="index-subheading">Questions are organised by topic.</div>
+          <div class="index-body">Topic questions are the best way to learn the entire syllabus. Topic quizzes make revision more fruitful and have been proven to improve performance by over 2x. Quizzes are time-based to improve self-management skills.</div>
+          <ul class="index-bullet">
+            <li>1,000+ exam questions that are corrected automatically</li>
+            <li>View and share results with ease</li>
+            <li>Questions tailored for IGCSE syllabus</li>
+          </ul>
+          <a href="topic-quizzes"><button class="ripple-dark slide-2-button">Click Here</button></a>
+        </div>
+        <img src="https://sanjayrajawat.com/images/index/topic_quizzes.png" width="400px">
+      </div>
+    </div>
+    <div id="slide-3">
+      <div class="container">
+        <div class="slide-right">
+          <div class="index-topic"><span class="underline">Revision Notes</span></div>
+          <div class="index-subheading">All the best notes in one place.</div>
+          <div class="index-body">Our revision notes are concise and organised.</div>
+          <ul class="index-bullet">
+            <li>Organised by topic</li>
+            <li>Specially curated by expert teachers with decades of experience</li>
+            <!--<li>Fully explained and labelled diagrams and definitions for each topic</li>-->
+            <li>IGCSE Economics Definition Banks with solutions</li>
+            <li>IGCSE Economics Diagram Banks with solutions</li>
+          </ul>
+          <a href="revision-notes"><button class="ripple-dark slide-3-button">Click Here</button></a>
+        </div>
+        <img src="https://sanjayrajawat.com/images/index/revision_notes.png" width="385px">
+      </div>
+    </div>
+    <div id="slide-4">
+      <div class="container">
+        <div class="slide-left">
+          <div class="index-topic"><span class="underline">Past Papers</span></div>
+          <div class="index-subheading">All IGCSE, O Levels and A Levels Economics past papers</div>
+          <div class="index-body">Past papers are a good way to practice putting the information that you have learnt in to written form. Being able to communicate your knowledge clearly is just as important as knowing the knowledge itself. Through past papers, you will be able to assess your progress and analyse your performance.</div>
+          <ul class="index-bullet">
+            <li><strong>3 boards</strong></li>
+            <li><strong>20 years</strong></li>
+            <li><strong>1372 papers</strong></li>
+          </ul>
+          <a href="past-papers"><button class="ripple-dark slide-4-button">Click Here</button></a>
+        </div>
+        <img src="https://sanjayrajawat.com/images/index/past_papers.png" width="335px">
+      </div>
+    </div>
+    <div id="footer-offset-calculator"></div>
+    <div class="footer" id="footer">
+      <div class="footer-links">
+        <div class="footer-section left">
+          <div class="footer-subtitle">Resources</div>
+          <a href="https://sanjayrajawat.com/" class="footer-link">Home</a>
+          <a href="https://sanjayrajawat.com/topic-quizzes/" class="footer-link">Topic Quizzes</a>
+          <a href="https://sanjayrajawat.com/revision-notes" class="footer-link">Revision Notes</a>
+          <a href="https://sanjayrajawat.com/past-papers/" class="footer-link">Past Papers</a>
+          <a href="https://sanjayrajawat.com/sitemap/" class="footer-link">Sitemap</a>
+        </div>
+        <div class="footer-section centre">
+          <div class="footer-subtitle">Members</div>
+          <a href="https://sanjayrajawat.com/join/" class="footer-link">Join</a>
+          <a href="https://sanjayrajawat.com/login/" class="footer-link">Login</a>
+          <a href="https://sanjayrajawat.com/settings/" class="footer-link">Settings</a>
+        </div>
+        <div class="footer-section right">
+          <div class="footer-subtitle">About</div>
+          <a href="https://sanjayrajawat.com/about-us/" class="footer-link">About Us</a>
+          <a href="https://sanjayrajawat.com/contact-us/" class="footer-link">Contact Us</a>
+          <a href="https://sanjayrajawat.com/privacy-policy/" class="footer-link">Privacy Policy</a>
+          <a href="https://sanjayrajawat.com/terms-of-service/" class="footer-link">Terms</a>
+        </div>
+      </div>
+      <div class="footer-credit">© Copyright <div id="copyright-year" style="display: inline-block"></div> <a class="footer-link" href="https://sanjayrajawat.com/">Sanjay Rajawat</a>. All Rights Reserved.</div>
+    </div>
+
+    <script src="https://sanjayrajawat.com/js/footer.js"></script>
+    <script src="https://sanjayrajawat.com/js/ripple.js"></script>
+    <script>
+      document.getElementById("copyright-year")
+        .innerHTML = new Date().getFullYear();
+    </script>
+  </body>
 </html>
