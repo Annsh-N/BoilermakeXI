@@ -1,0 +1,40 @@
+.table-striped>tbody>tr:nth-child(odd)>td {
+   background-color: rgb(167, 217, 158);
+ } 
+.table-striped>tbody>tr:nth-child(even)>td {
+   background-color: rgb(116, 163, 108);
+ }
+ .bi{
+    vertical-align: 5px;
+    float: right;
+    height: 25px;
+ }
+ .btn{
+    padding: 0%;
+ }
+.vertical-class-container{
+    display: grid;
+    place-items: center;
+    float: right;
+ }
+ .bi-hand-thumbs-up-fill, .bi-hand-thumbs-down-fill{
+    color: white;
+ }
+ .mealTitle{
+   position: absolute; 
+   margin-top: 10px; 
+   margin-left: 10px;
+   color: white;
+ }
+ #reco-box{
+   margin-top: 44px;
+   position: absolute;
+   height: 15px;
+   width: 100%;
+   font-size: smaller;
+   background-color: rgba(102, 137, 196, 40%);
+   color: rgba(256, 256, 256, 80%);
+   font-style: italic;
+   padding-left: 2%;
+   padding-right: 2%;
+ }
