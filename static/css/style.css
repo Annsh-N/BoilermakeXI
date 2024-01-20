@@ -493,24 +493,4 @@ a:hover {
   transition: 0.3s;
 }
 
-.team-members {
-  display: flex;
-  justify-content: space-between; /* Distributes space evenly between items */
-  align-items: center;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-  padding: 0 15px; /* Adds padding on both sides */
-}
 
-.team-member {
-  text-align: center; /* Centers the text (name) under the photo */
-  flex-grow: 1; /* Allows the item to grow to fill the space */
-  margin: 0 10px; /* Adds margin between team members */
-}
-
-.team-photo {
-  width: 160px; /* Adjust the width as needed */
-  height: 160px; /* Adjust the height as needed */
-  object-fit: cover; /* Ensures images are scaled correctly */
-  border-radius: 50%; /* Optional: for round images */
-  margin-bottom: 10px; /* Space between image and name */
-}
