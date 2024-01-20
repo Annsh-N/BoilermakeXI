@@ -34,7 +34,7 @@
 }
 
 .underline {
-  border: solid rgba(209, 150, 58, 0.5);
+  border: solid #735CEB;
   border-width: 0px 0px 3px 0px
 }
 
@@ -79,8 +79,8 @@
 }
 
 .slide-1-button {
-  border: solid #D1963A 2px;
-  color: #D1963A;
+  border: solid #735CEB 2px;
+  color: #735CEB;
   font-family: "Karla Medium";
   width: 150px;
 }
@@ -91,8 +91,8 @@
 }
 
 .slide-1-button-2 {
-  border: solid #D1963A 2px;
-  color: #D1963A;
+  border: solid #735CEB 2px;
+  color: #735CEB;
   font-family: "Karla Medium";
   width: 150px;
   margin-left: 10px;
@@ -116,8 +116,8 @@
 }
 
 .slide-2-button {
-  border: solid #D1963A 2px;
-  color: #D1963A;
+  border: solid #735CEB 2px;
+  color: #735CEB;
   font-family: "Karla Medium";
   width: 120px;
   display: block;
@@ -143,8 +143,8 @@
 }
 
 .slide-3-button {
-  border: solid #D1963A 2px;
-  color: #D1963A;
+  border: solid #735CEB 2px;
+  color: #735CEB;
   font-family: "Karla Medium";
   width: 120px;
   display: block;
@@ -171,8 +171,8 @@
 }
 
 .slide-4-button {
-  border: solid #D1963A 2px;
-  color: #D1963A;
+  border: solid #735CEB 2px;
+  color: #735CEB;
   font-family: "Karla Medium";
   width: 120px;
   display: block;

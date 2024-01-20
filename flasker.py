@@ -13,7 +13,7 @@ def main():
     return render_template("main.html")
 
 
-@app.route("/menu/")
+@app.route("/menus/")
 def menu():
     return render_template("menu.html")
 

@@ -21,7 +21,7 @@
   transition: background-image 1s linear 0.3s, background-color 0.2s linear, color 0.2s linear;
 }
 .ripple-dark:hover, .ripple-yellow:hover {
-  background-color: #D1963A;
+  background-color: #735CEB;
   color: #000;
 }
 .ripple-light:focus, .ripple-white:focus, .ripple-dark:focus, .ripple-yellow:focus, .ripple-brand:focus, .ripple-medium-dark:focus, .ripple-wide-dark:focus, .ripple-wide-light:focus {

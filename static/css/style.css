@@ -144,7 +144,7 @@
    padding: 0;
    margin: 0;
 }
- 
+
 #nav {
    position: fixed;
    top: 0;
@@ -181,6 +181,10 @@ ul.topnav, ul.short-topnav, ul.account-topnav {
    padding: 7px 0;
    overflow: visible;
 }
+
+ul.topnav {
+   padding-left: 20px;
+}
  
 ul.topnav li, ul.short-topnav li, ul.account-topnav li {float: left;}
 
@@ -190,7 +194,7 @@ ul.topnav li a, ul.short-topnav li a, ul.account-topnav li a {
    text-align: center;
    text-decoration: none;
    transition: background-color 0.3s;
-   margin-left: 20px;
+   margin-left: 4px;
    margin-right: 5px;
    margin-top: 4px;
    padding: 0;
@@ -201,9 +205,9 @@ ul.topnav li a, ul.short-topnav li a, ul.account-topnav li a {
  
 ul.topnav li a:not(.active), ul.short-topnav li a:not(.active), ul.account-topnav li a:not(.active), ul.topnav li a:not(.blue-active), ul.short-topnav li a:not(.blue-active), ul.account-topnav li a:not(.blue-active) {color: #fff}
 
-ul.topnav li a.active button, ul.short-topnav li a.active button, ul.account-topnav li a.active button {background-color: #D1963A; color: #000}
+ul.topnav li a.active button, ul.short-topnav li a.active button, ul.account-topnav li a.active button {background-color: #735CEB; color: #000}
 
-ul.topnav li a.blue-active button, ul.short-topnav li a.blue-active button, ul.account-topnav li a.blue-active button {background-color: #6EB8F2; color: #000}
+ul.topnav li a.blue-active button, ul.short-topnav li a.blue-active button, ul.account-topnav li a.blue-active button {background-color: #05A85C; color: #000}
 
 ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float: right;}
 
@@ -221,8 +225,8 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 #nav #nametitle {font-family: Antic; display: inline-block; position: absolute; left: 65px; top: 12px; font-size: 30px; width: 195px; text-align: center; color: white}
 #nav #nametitle::before {content: 'Campus Crunch'}
 
-.nav-ripple-green {
-  border: solid #6EB8F2 2px;
+.nav-ripple-white {
+  border: solid white 2px;
   margin-top: 3px;
   margin-left: 5px;
   margin-right: 5px;
@@ -231,8 +235,8 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
   transition: color 0.3s, background-color 0.3s, border-color 0.3s
 }
 
-.nav-ripple-green:hover {
-  background: #6EB8F2;
+.nav-ripple-white:hover {
+  background: white;
   border-color: transparent;
   border-width: 0;
   padding: 12px 18px;
@@ -240,7 +244,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 }
 
 .dropbtn {
-  border: solid #6EB8F2 2px;
+  border: solid white 2px;
   color: white;
   padding: 2px;
   height: 40px;
@@ -257,7 +261,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
   padding: 4px;
   border-width: 0;
   color: black;
-  background-color: #6EB8F2;
+  background-color: white;
 }
 
 .dropdown {
@@ -269,7 +273,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
   position: absolute;
   top: 50px;
   right: 0px;
-  border: solid #6EB8F2 2px;
+  border: solid #05A85C 2px;
   background-color: white;
   border-radius: 15px 0 15px 15px;
   transform: scale(0);
@@ -309,7 +313,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
   right: 0;
   width: 500px;
   border-radius: 20px;
-  border: solid #6EB8F2 5px;
+  border: solid #05A85C 5px;
   z-index: 1000;
   margin: auto;
   background: white;
@@ -340,7 +344,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border: solid #D1963A 2px;
+  border: solid #735CEB 2px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -354,8 +358,8 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
   color: black;
   margin-left: auto;
   margin-right: auto;
-  background: #D1963A;
-  border: solid #D1963A 2px;
+  background: #735CEB;
+  border: solid #735CEB 2px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -367,7 +371,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 }
 
 #bottom-short-menu-links button {
-  border: solid #6EB8F2 2px;
+  border: solid #05A85C 2px;
   padding: 10px 16px;
 }
 
@@ -377,7 +381,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 }
 
 #bottom-short-menu-links button:hover {
-  background: #6EB8F2
+  background: #05A85C
 }
 
 .footer {
