@@ -30,7 +30,7 @@
 .index-topic {
   font-family: "Karla Bold";
   font-size: 30px;
-  color: #52BAF7;
+  color: #05A85C;
 }
 
 .underline {
@@ -61,7 +61,7 @@
 }
 
 .blue {
-  color: #52BAF7
+  color: #05A85C
 }
 
 #slide-1-body {
@@ -111,7 +111,7 @@
 }
 
 #slide-2 img {
-  float: right;
+  float: left;
   margin-top: 70px;
 }
 
@@ -133,13 +133,14 @@
 
 #slide-3 {
   position: relative;
-  height: 410px;
+  height: 370px;
   width: auto;
   background-color: white
 }
 
 #slide-3 img {
   margin-top: 50px;
+  float: right
 }
 
 .slide-3-button {

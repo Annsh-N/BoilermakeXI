@@ -264,27 +264,6 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
   background-color: white;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 50px;
-  right: 0px;
-  border: solid #05A85C 2px;
-  background-color: white;
-  border-radius: 15px 0 15px 15px;
-  transform: scale(0);
-  opacity: 0;
-  min-width: 100px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  transition: 0.3s;
-}
-
 .menu {
   font-family: 'Material Icons Outlined';
   font-weight: normal;
@@ -317,7 +296,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
   z-index: 1000;
   margin: auto;
   background: white;
-  display: none;
+  display: block;
   opacity: 0;
   transition: 0.3s;
   transform: scale(0.2, 0.2)
@@ -386,7 +365,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 
 .footer {
   width: 100%;
-  background-color: #205169;
+  background-color: #05A85C;
   margin-top: 30px;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -407,7 +386,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 .footer-section {
   width: 120px;
   display: inline-block;
-  height: 122px;
+  height: 10px;
 }
 
 .left {
@@ -445,17 +424,21 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 
 .footer-subtitle {
   font-family: Antic;
-  font-size: 20px;
-  color: #52baf7
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: underline #735CEB 4px;
 }
 
 .footer-link {
   display: block;
-  color: #ccc
+  color: #fff;
+  padding-left: 4px;
 }
 
 .footer-link:hover {
-  color: #fff;
+  text-decoration: underline #735CEB 2px;
+  color: #fff
 }
 
 .footer-credit {
@@ -477,5 +460,35 @@ a {
 }
 
 a:hover {
-  color: #52BAF7
+  color: #05A85C
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 55px;
+  right: 0px;
+  border: solid #05A85C 2px;
+  background-color: #05A85C;
+  border-radius: 15px 0 15px 15px;
+  /* transform: scale(0); */
+  opacity: 1;
+  min-width: 100px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.dropdown-link {
+  display: block;
+  color: black;
+  background: red;
+  padding: 12px 16px;
+  text-decoration: none;
+  transition: 0.3s;
 }
