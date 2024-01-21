@@ -68,7 +68,7 @@ def terms():
 @app.route("/join/")
 def join():
     return oauth.auth0.authorize_redirect(
-        redirect_uri=url_for("callback", _external=True), screen_hint="signup"
+        redirect_uri=url_for("join_callback", _external=True), screen_hint="signup"
     )
 
 
@@ -76,17 +76,24 @@ def join():
 def login():
     return oauth.auth0.authorize_redirect(
         redirect_uri=url_for(
-            "callback",
+            "login_callback",
             _external=True,
         )
     )
 
 
-@app.route("/callback/", methods=["GET", "POST"])
-def callback():
+@app.route("/join_callback/", methods=["GET", "POST"])
+def join_callback():
     token = oauth.auth0.authorize_access_token()
     session["user"] = token
     return redirect("/settings/")
+
+
+@app.route("/login_callback/", methods=["GET", "POST"])
+def login_callback():
+    token = oauth.auth0.authorize_access_token()
+    session["user"] = token
+    return redirect("/")
 
 
 @app.route("/logout/")
