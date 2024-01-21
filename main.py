@@ -211,6 +211,9 @@ def logout():
 def new_user_info():
     return render_template("new-user-info.html")
 
+@app.route("/nutritional-info/")
+def nutritional_info():
+    return render_template("nutritional-info.html")
 
 @app.route("/settings/")
 def settings():
