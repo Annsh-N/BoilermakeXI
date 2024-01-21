@@ -5,7 +5,8 @@ from urllib.parse import quote_plus, urlencode
 from authlib.integrations.flask_client import OAuth
 from dotenv import find_dotenv, load_dotenv
 from flask import Flask, redirect, render_template, session, url_for
-import sql_backend # comment this thing
+import sql_backend  # comment this thing
+
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -93,14 +94,18 @@ def join_callback():
 def login_callback():
     token = oauth.auth0.authorize_access_token()
     session["user"] = token
-    # get email from token
+
     info = sql_backend.onLogin(session["user"]["userinfo"]["email"])
+    session["user"]["userinfo"]["sex"] = info[0]
+    session["user"]["userinfo"]["age"] = info[0]
+    session["user"]["userinfo"]["height"] = info[0]
     session["user"]["userinfo"]["weight"] = info[0]
-    session["user"]["userinfo"]["dietGoals"] = info[1]
-    session["user"]["userinfo"]["dietaryRestrictions"] = info[2]
-    session["user"]["userinfo"]["likedFoods"] = info[3]
-    session["user"]["userinfo"]["dislikedFoods"] = info[4]
-    session["user"]["userinfo"]["dietaryPreferences"] = info[5]
+    session["user"]["userinfo"]["activity"] = info[1]
+    session["user"]["userinfo"]["goal"] = info[2]
+    session["user"]["userinfo"]["preferences"] = info[3]
+    session["user"]["userinfo"]["allergen"] = info[4]
+    session["user"]["userinfo"]["likedMeals"] = info[5]
+    session["user"]["userinfo"]["disLikedMeals"] = info[5]
     return redirect("/")
 
 
@@ -128,7 +133,7 @@ def nutritional_info():
 
 @app.route("/settings/")
 def settings():
-    return render_template("settings.html")
+    return render_template("settings.html", session=session.get("user"))
 
 
 if __name__ == "__main__":
