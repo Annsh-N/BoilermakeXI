@@ -32,12 +32,12 @@ def home():
 
 @app.route("/diet-generator/")
 def diet_generator():
-    return render_template("diet-generator.html")
+    return render_template("diet-generator/index.html")
 
 
-@app.route("/meal/")
+@app.route("/diet-generator/meal/")
 def meal():
-    return render_template("meal.html")
+    return render_template("diet-generator/meal.html")
 
 
 @app.route("/menus/")

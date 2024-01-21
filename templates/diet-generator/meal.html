@@ -15,7 +15,7 @@
     <title>Campus Crunch</title>
     <link rel="stylesheet" href="/static/css/ripple.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/diet-generator.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/meal.css" type="text/css">
   </head>
   <body>
     <div id="menu-background"></div>
@@ -131,7 +131,7 @@
 
     <!--Reccomendations Title-->
     <div class="title">
-      <div class="menu-title">Recommendations of the Day</div>
+      <div class="menu-title">Meal</div>
       <a href="/settings/" class="material-icons ripple-light select-preferences">tune</a>
     </div>
 
@@ -139,12 +139,13 @@
     
     <div class="tables">
       <div class="table">
-        <div class="table-header" colspan="2" style="background-image: url('/static/img/breakfast.jpeg'); background-size: cover">
-          <a href="/meal/" id="breakfast-link"><div>
-            <span class="meal-title">Breakfast</span>
+        <div class="table-header">
+          <div>
+            <span class="meal-title">#1</span>
             <span class="meal-location">Earhart Dining Court (7am - 10am)</span>
-            <span id="breakfast-show-more" class="material-icons meal-show-more" href="/meal/">chevron_right</span>
-          </div></a>
+            <span id="like-1" class="material-icons-outlined like" onclick="like('1')">thumb_up</span>
+            <span id="dislike-1" class="material-icons-outlined dislike" onclick="dislike('1')">thumb_down</span>
+          </div>
         </div>
         <div class="table-row">
           <a href="/meal-item/" class="meal-item">
@@ -170,12 +171,13 @@
       </div>
 
       <div class="table">
-        <div class="table-header" colspan="2" style="background-image: url('/static/img/lunch.jpeg'); background-size: cover">
-          <a href="/meal/" id="lunch-link"><div>
-            <span class="meal-title">Lunch</span>
+        <div class="table-header">
+          <div>
+            <span class="meal-title">#2</span>
             <span class="meal-location">Earhart Dining Court (7am - 10am)</span>
-            <span id="lunch-show-more" class="material-icons meal-show-more" href="/meal/">chevron_right</span>
-          </div></a>
+            <span id="like-2" class="material-icons-outlined like" onclick="like('2')">thumb_up</span>
+            <span id="dislike-2" class="material-icons-outlined dislike" onclick="dislike('2')">thumb_down</span>
+          </div>
         </div>
         <div class="table-row">
           <a href="meal-item" class="meal-item">
@@ -201,12 +203,13 @@
       </div>
 
       <div class="table">
-        <div class="table-header" colspan="2" style="background-image: url('/static/img/dinner.jpeg'); background-size: cover">
-          <a href="/meal/" id="dinner-link"><div>
-            <span class="meal-title">Dinner</span>
+        <div class="table-header">
+          <div>
+            <span class="meal-title">#3</span>
             <span class="meal-location">Earhart Dining Court (7am - 10am)</span>
-            <span id="dinner-show-more" class="material-icons meal-show-more" href="/meal/">chevron_right</span>
-          </div></a>
+            <span id="like-3" class="material-icons-outlined like" onclick="like('3')">thumb_up</span>
+            <span id="dislike-3" class="material-icons-outlined dislike" onclick="dislike('3')">thumb_down</span>
+          </div>
         </div>
         <div class="table-row">
           <a href="meal-item" class="meal-item">
@@ -231,7 +234,7 @@
         </div>
       </div>
     </div>
-    <script src="/static/js/script.js"></script>
+    <script src="/static/js/meal.js"></script>
 
     <div id="footer-offset-calculator"></div>
     <div class="footer" id="footer">
