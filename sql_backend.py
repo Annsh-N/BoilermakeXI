@@ -60,8 +60,6 @@ with pool.connect() as db_conn:
 
     result = db_conn.execute(text("SELECT * FROM userInfo;")).fetchall()
 
-    for row in result:
-        print(row)
 db_conn = pool.connect()
 weight = 0
 dietGoals = ""
@@ -144,3 +142,48 @@ def addDietaryPreferences(email, food):
 def addUser(email, dietaryRestrictions, likedFoods, dislikedFoods, weight, dietGoals, dietaryPreferences, sex, age, height, activeness):
     db_conn.execute(text(f"INSERT INTO userInfo VALUES ('{email}', '{dietaryRestrictions}', '{likedFoods}', '{dislikedFoods}', {weight}, '{dietGoals}', '{dietaryPreferences}', '{sex}', {age}, {height}, '{activeness}')"))
     db_conn.commit()
+
+
+def storeMeals(email, mealName, mealType, mealLocation, mealIngredients, servingSize, recNo):
+    db_conn.execute(text("CREATE TABLE IF NOT EXISTS meals(email text, name text, type text, location text, ingredients text[], serving_sizes text[], rec_no integer)"))
+    db_conn.execute(text(f"INSERT INTO meals VALUES ('{email}', '{mealName}', '{mealType}', '{mealLocation}', ARRAY{mealIngredients}, ARRAY{servingSize}, {recNo})"))
+    db_conn.commit()
+
+def getMeals(email):
+    result = db_conn.execute(text(f"SELECT * FROM meals WHERE email = '{email}'")).fetchall()
+    return result
+
+def parseMeals(email, theString):
+    """('Classic Hot Dog with Sides',
+     [['Super Beef Hot Dog', '1 hotdog'], ['Hot Dog Bun', '1 bun'], ['Coney Island Sauce', '2 tbsp'],
+      ['Shredded Cheddar Cheese', '1 ounce'], ['Seasoned Curly Fries', '4 oz'], ['Sweet Pickle Relish', '1 ounce'],
+      ['Green Beans', '1 cup']])
+    ('Chicken Pasta Delight',
+     [['Chicken Breast Tenders', '4 tenders'], ['Cavatappi Pasta', '1 cup'], ['Marinara Sauce', '1/4 cup'],
+      ['Broccoli Florets', '1 cup'], ['Shredded Cheddar Cheese', '1 ounce']])
+    ('Shrimp Popper Wrap',
+     [['Flour Tortilla 12 inches', '1 tortilla'], ['Shrimp Poppers', '4 oz'], ['Leaf Lettuce', '2 leaves'],
+      ['Sliced Red Onions', '2 slices'], ['Mayonnaise', '1 tablespoon'], ['Ketchup', '1 tbsp'],
+      ['BBQ Sauce', '2 tbsp']])"""
+    mealName = theString[0]
+    mealIngredients = []
+    servingSize = []
+    for i in range(1, len(theString)-3):
+        mealIngredients.append(theString[i][0])
+        servingSize.append(theString[i][1])
+    mealType = theString[len(theString)-3]
+    mealLocation = theString[len(theString)-2]
+    recNo = theString[len(theString)-1]
+    print(mealName + " " + mealType + " " + mealLocation + " " + str(mealIngredients) + " " + str(servingSize) + " " + str(recNo))
+
+parseMeals("test", [('Classic Hot Dog with Sides',
+     [['Super Beef Hot Dog', '1 hotdog'], ['Hot Dog Bun', '1 bun'], ['Coney Island Sauce', '2 tbsp'],
+      ['Shredded Cheddar Cheese', '1 ounce'], ['Seasoned Curly Fries', '4 oz'], ['Sweet Pickle Relish', '1 ounce'],
+      ['Green Beans', '1 cup']])
+    ('Chicken Pasta Delight',
+     [['Chicken Breast Tenders', '4 tenders'], ['Cavatappi Pasta', '1 cup'], ['Marinara Sauce', '1/4 cup'],
+      ['Broccoli Florets', '1 cup'], ['Shredded Cheddar Cheese', '1 ounce']])
+    ('Shrimp Popper Wrap',
+     [['Flour Tortilla 12 inches', '1 tortilla'], ['Shrimp Poppers', '4 oz'], ['Leaf Lettuce', '2 leaves'],
+      ['Sliced Red Onions', '2 slices'], ['Mayonnaise', '1 tablespoon'], ['Ketchup', '1 tbsp'],
+      ['BBQ Sauce', '2 tbsp']])])
