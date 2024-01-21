@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             // Replace "YourItemName" with the actual name of the item you want to display
-            const itemName = "BBQ Pork Ribette";
+            const itemName = "White Mini Sub Bun";
             const item = data.find(item => item.items.some(i => i.name === itemName));
 
             if (item) {
@@ -41,7 +41,7 @@ function displayNutritionFacts(item) {
 
 function displayAllergens(item) {
     const allergensContainer = document.getElementById("allergen-icons");
-    item.Allergens.split(", ").forEach(allergen => {
+    item.Allergens.split(",").forEach(allergen => {
         const iconLink = `https://api.hfs.purdue.edu/Menus/Content/dietaryTagIcons/PurdueMenusIcons_${allergen}.svg`;
         const iconContainer = document.createElement("div");
         iconContainer.classList.add("allergen-icon");
