@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An economical way to ace economics!" />
+    <meta property="og:title" content="Campus Crunch">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="An economical way to ace economics!" />
+    <meta property="og:url" content="http://campuscrunch.co" />
+    <meta property="og:site_name" content="Campus Crunch" />
+    <meta property="og:image" content="http://campuscrunch.co/images/card.jpeg" />
+
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+    <title>Campus Crunch</title>
+    <link rel="stylesheet" href="/static/css/ripple.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/index.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+
+ 
+    <link rel="stylesheet" href="/static/css/new-user-info.css">
+</head>
+<body>
+    <div id="menu-background"></div>
+    <button id="short-menu-close" class="material-icons">close</button>
+    <div class="nav-holder"></div>
+    <div id='nav'>
+      <div id="nav-align">
+        <div id="title">
+          <a href="/">
+            <button class="ripple-brand brand">
+              <div id="logo"></div>
+              <div id="name">
+                <div id="nametitle"></div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <ul class="topnav">
+            <li><a href="/"><button class="ripple-yellow">Diet Generator</button></a></li>
+            <li><a href="/menus/"><button class="ripple-yellow">Menus</button></a></li>
+        </ul>
+          <ul class="topnav" style="float: right">
+            <li id="nav-join-li"><button id="open-join-menu" class="ripple-yellow nav-ripple-white">Join</button></li>
+            <li id="nav-login-li"><button id="open-login-menu" class="ripple-yellow nav-ripple-white">Login</button></li>
+          </ul>
+          <ul class="account-topnav" style="float: right">
+            <li id="nav-profile-li">
+              <div class="dropdown">
+                <button onclick="showProfileDropDown()" id="profile-dropbutton" class="ripple-yellow nav-ripple-white dropbtn"><span class="material-icons-outlined">account_circle</span></button>
+                <div id="profile-dropdown-content" class="dropdown-content">
+                  <a href="/settings/" class="ripple-dark" id="dropdown-link-settings">Settings</a>
+                  <a href="/logout/" class="ripple-dark" id="dropdown-link-logout">Logout</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        <ul class="short-topnav" style="float: right">
+          <li><button id="topnav-menu" class="ripple-yellow material-icons-outlined menu">Menus</button></li>
+        </ul>
+      </div>
+      <div id="short-menu" class="pop-up-menu">
+        <div id="short-menu-reference">
+          <div class="short-menu-links">
+              <a href="/"><button class="ripple-yellow short-menu-link">Diet Generator</button></a>
+              <a href="/menus/"><button class="ripple-yellow short-menu-link">Menus</button></a>
+          </div>
+          <div class="short-menu-links" id="bottom-short-menu-links">
+            <button id="open-short-join-menu" class="ripple-yellow short-menu-link">Join</button>
+            <button id="open-short-login-menu" class="ripple-yellow short-menu-link">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/header.js"></script>
+
+    <!--end of navbar-->
+
+    <h1 class="title">Dietary Goals</h1>
+
+    <div class="container">
+
+        <div class="form-group">
+            <label for="sex">Sex:</label>
+            <div class="sex-buttons">
+                <button class="sex-option" data-value="male">Male</button>
+                <button class="sex-option" data-value="female">Female</button>
+                <button class="sex-option" data-value="rather_not_say">Rather not say</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ageInput">Age:</label>
+            <input type="number" id="ageInput" class="rounded-input" placeholder="Enter your age" oninput="validateNumericInput(this)">
+        </div>             
+
+        <div class="form-group">
+            <label for="height">Height:</label>
+            <div class="input-with-unit">
+                <input type="text" id="height" name="height" placeholder="Enter your height" oninput="validateNumericInput(this)">
+                <span class="unit">cms</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="weight">Weight:</label>
+            <div class="input-with-unit">
+                <input type="text" id="weight" name="weight" placeholder="Enter your weight" oninput="validateNumericInput(this)">
+                <span class="unit">kgs</span>
+            </div>
+        </div>
+
+        <div class="activity-buttons">
+            <button class="light-activity">Light Activity<br/><span class="activity-description">1-3 days of exercise per week</span></button>
+            <button class="moderate-activity">Moderate Activity<br/><span class="activity-description">3-5 days of exercise per week</span></button>
+            <button class="heavy-activity">Heavy Activity<br/><span class="activity-description">6-7 days of exercise per week</span></button>
+        </div>
+
+        <div class="select-goal-container">
+            <label>Select Goal:</label>
+            <div class="goal-buttons">
+                <button id="bulkButton" class="goal-button" onclick="selectGoal('bulk')">Bulk</button>
+                <button id="cutButton" class="goal-button" onclick="selectGoal('cut')">Cut</button>
+                <button id="maintainButton" class="goal-button" onclick="selectGoal('maintain')">Maintain</button>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button id="resetButton" onclick="resetPreferences()">Reset</button>
+            <button id="submitButton" onclick="submitPreferences()">Submit</button>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
