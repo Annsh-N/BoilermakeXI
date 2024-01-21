@@ -34,6 +34,9 @@ def home():
 def main():
     return render_template("main.html")
 
+@app.route("/meal/")
+def meal():
+    return render_template("meal.html")
 
 @app.route("/menus/")
 def menu():
