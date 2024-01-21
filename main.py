@@ -34,9 +34,11 @@ def home():
 def main():
     return render_template("main.html")
 
+
 @app.route("/meal/")
 def meal():
     return render_template("meal.html")
+
 
 @app.route("/menus/")
 def menu():
@@ -110,4 +112,4 @@ def settings():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=env.get("PORT", 3000))
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
