@@ -46,9 +46,30 @@ function submitPreferences() {
     // For now, you can leave it empty or add a link to the href attribute
     document.getElementById("submitButton").setAttribute("href", "your_submission_link_here");
 }
-function validateNumericInput(input) {
+function validateAgeInput(input) {
     // Allow only numeric values
     input.value = input.value.replace(/[^0-9]/g, '');
+
+    // Limit to a minimum value of 0
+    if (parseInt(input.value) < 0) {
+        input.value = '0';
+    }
+
+    // Limit to a maximum value of 150
+    if (parseInt(input.value) > 150) {
+        input.value = '150';
+    }
+}
+function validateHeightInput(input) {
+    // Allow only numeric values
+    input.value = input.value.replace(/[^0-9.]/g, '');
+
+    // Ensure there is at most one decimal point
+    let decimalCount = (input.value.match(/\./g) || []).length;
+    if (decimalCount > 1) {
+        // More than one decimal point, remove the extra ones
+        input.value = input.value.slice(0, input.value.lastIndexOf('.'));
+    }
 
     // Limit to a minimum value of 0
     if (parseInt(input.value) < 0) {
@@ -58,6 +79,27 @@ function validateNumericInput(input) {
     // Limit to a maximum value of 300
     if (parseInt(input.value) > 300) {
         input.value = '300';
+    }
+}
+function validateWeightInput(input) {
+    // Allow only numeric values
+    input.value = input.value.replace(/[^0-9.]/g, '');
+
+    // Ensure there is at most one decimal point
+    let decimalCount = (input.value.match(/\./g) || []).length;
+    if (decimalCount > 1) {
+        // More than one decimal point, remove the extra ones
+        input.value = input.value.slice(0, input.value.lastIndexOf('.'));
+    }
+
+    // Limit to a minimum value of 0
+    if (parseInt(input.value) < 0) {
+        input.value = '0';
+    }
+
+    // Limit to a maximum value of 600
+    if (parseInt(input.value) > 600) {
+        input.value = '600';
     }
 }
 
