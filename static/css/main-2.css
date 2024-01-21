@@ -1,0 +1,173 @@
+.title {
+    position: relative;
+    width: 1240px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-title {
+    display: inline-block;
+    font-size: 30pt;
+    font-family: "Karla Bold";
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #05A85C;
+    width: 100%;
+}
+
+.select-preferences {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: inline-block;
+    padding: 15px 15px;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14pt;
+    transition: 0.3s;
+}
+
+.select-preferences:hover {
+    background-color: #735CEB;
+    color: white;
+}
+
+.tables {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 1250px;
+}
+
+.table {
+    display: block;
+    max-width: 400px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 0;
+}
+
+.table-header {
+    position: relative;
+    font-size: 20pt;
+    font-family: "Karla Bold";
+    border: solid #05A85C;
+    padding: 40px;
+    border-width: 0px 0px 2px 0px;
+    color:#D5DDE5;
+    background:#1b1e24;
+    padding: 0;
+    height: 80px;
+}
+
+.table-header a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.table {
+    display: inline-block;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: solid #05A85C;
+    border-width: 2px ;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.meal-show-more {
+    position: absolute;
+    display: inline;
+    top: 26px;
+    left: 340px;
+    background: none;
+    color: white;
+    opacity: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+a:hover .meal-show-more {
+    left: 355px;
+    opacity: 1;
+}
+
+.meal-title {
+    color: white;
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    font-size: 20pt;
+}
+
+.meal-location {
+    font-family: "Karla Light";
+    color: white;
+    position: absolute;
+    bottom: 14px;
+    left: 20px;
+    font-size: 14pt
+}
+
+.table-row {
+    width: 100%;
+}
+
+.meal-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    color: #555;
+    transition: 0.3s;
+}
+
+.meal-item:hover {
+    background: #05A85C;
+    color: white;
+}
+
+.item-name {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    font-size: 14pt;
+    font-family: "Karla"
+}
+
+.item-quantity {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 60px;
+    font-size: 14pt;
+    font-family: "Karla"
+}
+
+.meal-item .material-icons {
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    font-size: 20pt;
+    transition: right 0.2s, color 0.1s;
+    cursor: pointer;
+}
+
+.meal-item:hover .material-icons {
+    right: 12px;
+    color: white;
+}

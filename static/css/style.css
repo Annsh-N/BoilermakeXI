@@ -253,7 +253,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 #nav ul {display: inline-block; margin: 0;}
 #nav #title {display: inline-block; position: relative; width: 250px; cursor: pointer; height: 50px; }
 #nav #nametitle {font-family: "Antic"; display: inline-block; position: absolute; left: 65px; top: 12px; font-size: 30px; width: 195px; text-align: center; color: white}
-#nav #nametitle::before {content: 'Campus Crunch'}
+#nav #nametitle::before {content: 'campuscrunch'}
 
 .nav-ripple-white {
  border: solid white 2px;
@@ -335,6 +335,7 @@ ul.topnav li.right, ul.short-topnav li.right, ul.account-topnav li.right {float:
 #short-menu {
  height: 350px;
  width: 250px;
+ display: none;
 }
 
 #short-menu-reference {

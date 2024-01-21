@@ -29,6 +29,15 @@
    margin-left: 10px;
    color: white;
  }
+
+ .menu-title {
+   font-size: 24pt;
+   font-family: "Karla Bold";
+   text-align: center;
+   margin-top: 10px;
+   text-decoration: underline;
+   text-decoration-color: #05A85C;
+}
  #reco-box{
    display: flex;
    align-items: center;
@@ -67,15 +76,6 @@
    padding: 0px;
 }
 
-.select-preferences-btn {
-   display: inline-block;
-   padding: 10px 20px;
-   border-radius: 20px;
-   background-color: green;
-   color: white;
-   text-decoration: none;
-   margin-top: 0px;
-}
 .recommendation-card {
    background: linear-gradient(to left, white, #307c29, white); /* Adjust the gradient colors as needed */
    height: 50px; /* Adjust the height as needed */

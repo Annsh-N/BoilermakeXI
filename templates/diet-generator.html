@@ -14,10 +14,8 @@
     <link rel="icon" href="/static/img/logo-original.png" type="image/png" />
     <title>Campus Crunch</title>
     <link rel="stylesheet" href="/static/css/ripple.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/main.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/main-2.css" type="text/css">
   </head>
   <body>
     <div id="menu-background"></div>
@@ -132,157 +130,106 @@
     <!--end of navbar-->
 
     <!--Reccomendations Title-->
-    <div class="container">
-        <div class="card recommendation-card">
-            <div class="card-body">
-                <div class="recommendation-content">
-                    Recommendations of the Day
-                </div>
-            </div>
-        </div>
+    <div class="title">
+      <div class="menu-title">Recommendations of the Day</div>
+      <a href="/settings/" class="material-icons ripple-light select-preferences">tune</a>
     </div>
 
     <!--Preferences Button-->
-    <div class="container2">
-        <a href="/settings/" class="select-preferences-btn">Select Preferences</a>
-    </div>
-
-    <!--Meal Cards-->
-    <div class="container">
-        <div class="card text-bg-success mt-3 w-auto">
-            <img src="/static/img/breakfast.jpeg" height="60" style="object-fit: cover; filter: brightness(70%);" class="card-img-top">
-            <h2 class="mealTitle">Breakfast</h2>
-            <div id="reco-box">
-                <p style="margin-bottom: 0;">Best Recomendation!<p></p>
-            </div>
-            <div class="card-header text-center" style="background-color:darkgreen; color:white">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col">
-                        <b>Earhart Dining Court</b>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex flex-row vertical-class-container">
-                            <div id="likeIconContainer" onclick="changeIconLike()">
-                                <i id ="iconLike" class="btn bi bi-hand-thumbs-up"></i>
-                            </div>
-                            <div id="dislikeIconContainer" onclick="changeIconDislike()">
-                                <i id ="iconDislike" class="btn bi bi-hand-thumbs-down"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <table class="table table-striped" style="background-color:green">
-                <tbody>
-                    <tr>
-                        <td>Chicken Breast</td>
-                        <td class="text-end">1 piece</td>
-                    </tr>
-                    <tr>
-                        <td>Brown Rice</td>
-                        <td class="text-end">1 cup</td>
-                    </tr>
-                    <tr>
-                        <td>Chinese Gravy</td>
-                        <td class="text-end">1 cup</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="card-footer">
-                <a id="view-more" style="margin-bottom: 0;" href="/meal/">View More Recomendations</a>
-            </div>
+    
+    <div class="tables">
+      <div class="table">
+        <div class="table-header" colspan="2" style="background-image: url('/static/img/breakfast.jpeg'); background-size: cover">
+          <a href="/meal/" id="breakfast-link"><div>
+            <span class="meal-title">Breakfast</span>
+            <span class="meal-location">Earhart Dining Court (7am - 10am)</span>
+            <span id="breakfast-show-more" class="material-icons meal-show-more" href="/meal/">chevron_right</span>
+          </div></a>
         </div>
-
-        <div class="card text-bg-success mt-5 w-auto">
-            <img src="/static/img/lunch.jpeg" height="60" style="object-fit: cover; filter: brightness(70%);" class="card-img-top">
-            <h2 class="mealTitle">Lunch</h2>
-            <div id="reco-box">
-                <p style="margin-bottom: 0;">Best Recomendation!<p></p>
-            </div>
-            <div class="card-header text-center" style="background-color:darkgreen; color:white">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col">
-                        <b>Earhart Dining Court</b>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex flex-row vertical-class-container">
-                            <div id="likeIconContainer" onclick="changeIconLike()">
-                                <i id ="iconLike" class="btn bi bi-hand-thumbs-up"></i>
-                            </div>
-                            <div id="dislikeIconContainer" onclick="changeIconDislike()">
-                                <i id ="iconDislike" class="btn bi bi-hand-thumbs-down"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <table class="table table-striped" style="background-color:green">
-                <tbody>
-                    <tr>
-                        <td>Chicken Breast</td>
-                        <td class="text-end">1 piece</td>
-                    </tr>
-                    <tr>
-                        <td>Brown Rice</td>
-                        <td class="text-end">1 cup</td>
-                    </tr>
-                    <tr>
-                        <td>Chinese Gravy</td>
-                        <td class="text-end">1 cup</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="card-footer">
-                <a id="view-more" style="margin-bottom: 0;" href="/meal/">View More Recomendations</a>
-            </div>
+        <div class="table-row">
+          <a href="/meal-item/" class="meal-item">
+            <span class="item-name">Chicken Breast</span>
+            <span class="material-icons">chevron_right</span>
+            <div class="item-quantity">1 piece</div>
+          </a>
         </div>
-
-        <div class="card text-bg-success mt-5 w-auto">
-            <img src="/static/img/dinner.jpeg" height="60" style="object-fit: cover; filter: brightness(70%);" class="card-img-top">
-            <h2 class="mealTitle">Dinner</h2>
-            <div id="reco-box">
-                <p style="margin-bottom: 0;">Best Recomendation!<p></p>
-            </div>
-            <div class="card-header text-center" style="background-color:darkgreen; color:white">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col">
-                        <b>Earhart Dining Court</b>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex flex-row vertical-class-container">
-                            <div id="likeIconContainer" onclick="changeIconLike()">
-                                <i id ="iconLike" class="btn bi bi-hand-thumbs-up"></i>
-                            </div>
-                            <div id="dislikeIconContainer" onclick="changeIconDislike()">
-                                <i id ="iconDislike" class="btn bi bi-hand-thumbs-down"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <table class="table table-striped" style="background-color:green">
-                <tbody>
-                    <tr>
-                        <td>Chicken Breast</td>
-                        <td class="text-end">1 piece</td>
-                    </tr>
-                    <tr>
-                        <td>Brown Rice</td>
-                        <td class="text-end">1 cup</td>
-                    </tr>
-                    <tr>
-                        <td>Chinese Gravy</td>
-                        <td class="text-end">1 cup</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="card-footer">
-                <a id="view-more" style="margin-bottom: 0;" href="/meal/">View More Recomendations</a>
-            </div>
+        <div class="table-row">
+          <a href="/meal-item/" class="meal-item">
+            <span class="item-name">Chicken Breast</span>
+            <span class="material-icons">chevron_right</span>
+            <div class="item-quantity">1 piece</div>
+          </a>
         </div>
+        <div class="table-row">
+          <a href="/meal-item/" class="meal-item">
+            <span class="item-name">Chicken Breast</span>
+            <span class="material-icons">chevron_right</span>
+            <span class="item-quantity">1 piece</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="table">
+        <div class="table-header" colspan="2" style="background-image: url('/static/img/lunch.jpeg'); background-size: cover">
+          <a href="/meal/" id="lunch-link"><div>
+            <span class="meal-title">Lunch</span>
+            <span class="meal-location">Earhart Dining Court (7am - 10am)</span>
+            <span id="lunch-show-more" class="material-icons meal-show-more" href="/meal/">chevron_right</span>
+          </div></a>
+        </div>
+        <div class="table-row">
+          <a href="meal-item" class="meal-item">
+            <span class="item-name">Chicken Breast</span>
+            <span class="material-icons">chevron_right</span>
+            <div class="item-quantity">1 piece</div>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="meal-item" class="meal-item">
+            <span class="item-name">Chicken Breast</span>
+            <span class="material-icons">chevron_right</span>
+            <div class="item-quantity">1 piece</div>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="meal-item" class="meal-item">
+            <span class="item-name">Chicken Breast</span>
+            <span class="material-icons">chevron_right</span>
+            <span class="item-quantity">1 piece</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="table">
+        <div class="table-header" colspan="2" style="background-image: url('/static/img/dinner.jpeg'); background-size: cover">
+          <a href="/meal/" id="dinner-link"><div>
+            <span class="meal-title">Dinner</span>
+            <span class="meal-location">Earhart Dining Court (7am - 10am)</span>
+            <span id="dinner-show-more" class="material-icons meal-show-more" href="/meal/">chevron_right</span>
+          </div></a>
+        </div>
+        <div class="table-row">
+          <a href="meal-item" class="meal-item">
+            <span class="item-name">Chicken Breast</span>
+            <span class="material-icons">chevron_right</span>
+            <div class="item-quantity">1 piece</div>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="meal-item" class="meal-item">
+            <span class="item-name">Chicken Breast</span>
+            <span class="material-icons">chevron_right</span>
+            <div class="item-quantity">1 piece</div>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="meal-item" class="meal-item">
+            <span class="item-name">Chicken Breast</span>
+            <span class="material-icons">chevron_right</span>
+            <span class="item-quantity">1 piece</span>
+          </a>
+        </div>
+      </div>
     </div>
     <script src="/static/js/script.js"></script>
 
