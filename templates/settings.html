@@ -14,7 +14,7 @@
     <link rel="icon" href="/static/img/logo-original.png" type="image/png" />
     <title>Campus Crunch</title>
     <link rel="stylesheet" href="/static/css/ripple.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/index.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/settings.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
   </head>
   <body>
@@ -74,8 +74,68 @@
     </div>
     <script src="/static/js/header.js"></script>
 
+    <!--end of navbar-->
 
-    
+    <h1 class="menu-title">Dietary Goals</h1>
+
+    <div class="container">
+
+        <div class="form-group">
+            <label class="block-label" for="sex">Sex:</label>
+            <div class="sex-buttons">
+                <button class="sex-option ripple-dark unactive" data-value="male">Male</button>
+                <button class="sex-option ripple-dark unactive" data-value="female">Female</button>
+                <button class="sex-option ripple-dark unactive" data-value="rather_not_say">Rather not say</button>
+            </div>
+        </div>
+
+        <div class="form-data">
+          <div class="form-group inline-group" id="age-group">
+              <label class="inline-label" for="ageInput">Age:</label>
+              <div class="input-with-unit">
+                <input type="text" id="age" class="rounded-input" placeholder="Enter your age" oninput="validateAgeInput(this)">
+              </div>
+          </div>
+
+          <div class="form-group inline-group" id="height-group">
+              <label class="inline-label" for="height">Height:</label>
+              <div class="input-with-unit">
+                  <input type="text" id="height" name="height" placeholder="Enter your height" oninput="validateHeightInput(this)">
+                  <span class="unit">cms</span>
+              </div>
+          </div>
+
+          <div class="form-group inline-group" id="weight-group">
+              <label class="inline-label" for="weight">Weight:</label>
+              <div class="input-with-unit">
+                  <input type="text" id="weight" name="weight" placeholder="Enter your weight" oninput="validateWeightInput(this)">
+                  <span class="unit">lbs</span>
+              </div>
+          </div>
+        </div>
+
+        <br>
+        <label class="block-label activity-label" for="activity">Activity:</label>
+        <div class="activity-buttons">
+          <button class="light-activity ripple-dark unactive">Light Activity<br/><span class="activity-description">1-3 days of exercise per week</span></button>
+          <button class="moderate-activity ripple-dark unactive">Moderate Activity<br/><span class="activity-description">3-5 days of exercise per week</span></button>
+          <button class="heavy-activity ripple-dark unactive">Heavy Activity<br/><span class="activity-description">6-7 days of exercise per week</span></button>
+        </div>
+
+        <br>
+        <div class="block-label goal-label">Goal:</div>
+        <div class="goal-buttons">
+          <button class="cutting-goal ripple-dark unactive">Cutting<br/><span class="activity-description">Reducing body fat while preserving muscle mass</span></button>
+          <button class="maintaining-goal ripple-dark unactive">Maintaining<br/><span class="activity-description">Maintaining your current body weight and composition</span></button>
+          <button class="bulking-goal ripple-dark unactive">Bulking<br/><span class="activity-description">Increasing calorie intake to build muscle mass and gain weight</span></button>
+        </div>
+
+        <div class="buttons-container">
+          <button class="ripple-dark" id="resetButton" onclick="resetPreferences()">Reset</button>
+          <button class="ripple-dark" id="submitButton" onclick="submitPreferences()">Submit</button>
+        </div>
+    </div>
+
     <div id="footer-offset-calculator"></div>
     <div class="footer" id="footer">
       <div class="footer-links">
@@ -101,5 +161,6 @@
 
     <script src="/static/js/footer.js"></script>
     <script src="/static/js/ripple.js"></script>
+    <script src="/static/js/settings.js"></script>
   </body>
 </html>

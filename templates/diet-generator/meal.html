@@ -14,8 +14,8 @@
     <link rel="icon" href="/static/img/logo-original.png" type="image/png" />
     <title>Campus Crunch</title>
     <link rel="stylesheet" href="/static/css/ripple.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
     <link rel="stylesheet" href="/static/css/meal.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
   </head>
   <body>
     <div id="menu-background"></div>
@@ -74,65 +74,12 @@
     </div>
     <script src="/static/js/header.js"></script>
 
-    <div id="menu-background"></div>
-    <button id="short-menu-close" class="material-icons">close</button>
-    <div class="nav-holder"></div>
-    <div id='nav'>
-      <div id="nav-align">
-        <div id="title">
-          <a href="/">
-            <button class="ripple-brand brand">
-              <div id="logo"></div>
-              <div id="name">
-                <div id="nametitle"></div>
-              </div>
-            </button>
-          </a>
-        </div>
-        <ul class="topnav">
-            <li><a href="/"><button class="ripple-yellow">Diet Generator</button></a></li>
-            <li><a href="/menus/"><button class="ripple-yellow">Menus</button></a></li>
-        </ul>
-          <ul class="topnav" style="float: right">
-            <li id="nav-join-li"><button id="open-join-menu" class="ripple-yellow nav-ripple-white">Join</button></li>
-            <li id="nav-login-li"><button id="open-login-menu" class="ripple-yellow nav-ripple-white">Login</button></li>
-          </ul>
-          <ul class="account-topnav" style="float: right">
-            <li id="nav-profile-li">
-              <div class="dropdown">
-                <button onclick="showProfileDropDown()" id="profile-dropbutton" class="ripple-yellow nav-ripple-white dropbtn"><span class="material-icons-outlined">account_circle</span></button>
-                <div id="profile-dropdown-content" class="dropdown-content">
-                  <a href="/settings/" class="ripple-dark" id="dropdown-link-settings">Settings</a>
-                  <a href="/logout/" class="ripple-dark" id="dropdown-link-logout">Logout</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        <ul class="short-topnav" style="float: right">
-          <li><button id="topnav-menu" class="ripple-yellow material-icons-outlined menu">Menus</button></li>
-        </ul>
-      </div>
-      <div id="short-menu" class="pop-up-menu">
-        <div id="short-menu-reference">
-          <div class="short-menu-links">
-              <a href="/"><button class="ripple-yellow short-menu-link">Diet Generator</button></a>
-              <a href="/menus/"><button class="ripple-yellow short-menu-link">Menus</button></a>
-          </div>
-          <div class="short-menu-links" id="bottom-short-menu-links">
-            <button id="open-short-join-menu" class="ripple-yellow short-menu-link">Join</button>
-            <button id="open-short-login-menu" class="ripple-yellow short-menu-link">Login</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="/static/js/header.js"></script>
-
     <!--end of navbar-->
 
     <!--Reccomendations Title-->
     <div class="title">
       <div class="menu-title">Meal</div>
-      <a href="/settings/" class="material-icons ripple-light select-preferences">tune</a>
+      <a href="/settings/" class="material-icons ripple-light select-preferences"  style="cursor: pointer">tune</a>
     </div>
 
     <!--Preferences Button-->
@@ -143,8 +90,8 @@
           <div style="background: rgba(0, 0, 0, 0.2); width: 100%; height: 100%;">
             <span class="meal-title">#1</span>
             <span class="meal-location">Earhart Dining Court (7am - 10am)</span>
-            <span id="like-1" class="material-icons-outlined like" onclick="like('1')">thumb_up</span>
-            <span id="dislike-1" class="material-icons-outlined dislike" onclick="dislike('1')">thumb_down</span>
+            <span id="like-1" class="material-icons-outlined like" onclick="like('1')" style="cursor: pointer">thumb_up</span>
+            <span id="dislike-1" class="material-icons-outlined dislike" onclick="dislike('1')" style="cursor: pointer">thumb_down</span>
           </div>
         </div>
         <div class="table-row">
@@ -175,8 +122,8 @@
           <div style="background: rgba(0, 0, 0, 0.2); width: 100%; height: 100%;">
             <span class="meal-title">#2</span>
             <span class="meal-location">Earhart Dining Court (7am - 10am)</span>
-            <span id="like-2" class="material-icons-outlined like" onclick="like('2')">thumb_up</span>
-            <span id="dislike-2" class="material-icons-outlined dislike" onclick="dislike('2')">thumb_down</span>
+            <span id="like-2" class="material-icons-outlined like" onclick="like('2')" style="cursor: pointer">thumb_up</span>
+            <span id="dislike-2" class="material-icons-outlined dislike" onclick="dislike('2')" style="cursor: pointer">thumb_down</span>
           </div>
         </div>
         <div class="table-row">
@@ -207,8 +154,8 @@
           <div style="background: rgba(0, 0, 0, 0.2); width: 100%; height: 100%;">
             <span class="meal-title">#3</span>
             <span class="meal-location">Earhart Dining Court (7am - 10am)</span>
-            <span id="like-3" class="material-icons-outlined like" onclick="like('3')">thumb_up</span>
-            <span id="dislike-3" class="material-icons-outlined dislike" onclick="dislike('3')">thumb_down</span>
+            <span id="like-3" class="material-icons-outlined like" onclick="like('3')" style="cursor: pointer">thumb_up</span>
+            <span id="dislike-3" class="material-icons-outlined dislike" onclick="dislike('3')" style="cursor: pointer">thumb_down</span>
           </div>
         </div>
         <div class="table-row">
@@ -261,6 +208,5 @@
 
     <script src="/static/js/footer.js"></script>
     <script src="/static/js/ripple.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

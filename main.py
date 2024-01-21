@@ -10,107 +10,6 @@ ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
 
-# SQL Database
-#Import required dependencies
-from google.cloud.sql.connector import Connector
-import sqlalchemy
-from sqlalchemy import text
-
-
-# Function to get CloudSQL instance password from Secret Manager
-def access_secret_version(project_id, secret_id, version_id):
-    """
-    Access the payload for the given secret version if one exists. The version
-    can be a version number as a string (e.g. "5") or an alias (e.g. "latest").
-    """
-
-    # Import the Secret Manager client library.
-    from google.cloud import secretmanager
-
-    # Create the Secret Manager client.
-    client = secretmanager.SecretManagerServiceClient()
-
-    # Build the resource name of the secret version.
-    name = f"projects/{project_id}/secrets/{secret_id}/versions/{version_id}"
-
-    # Access the secret version.
-    response = client.access_secret_version(request={"name": name})
-    # Print the secret payload.
-    # snippet is showing how to access the secret material.
-    payload = response.payload.data.decode("UTF-8")
-    return payload
-
-# Function call to get DB password ino a local varaiable
-db_password = access_secret_version('vernal-landing-411806', 'campus-crunch','1')
-
-
-# initialize Connector object
-connector = Connector()
-
-# function to return the database connection
-def getconn():
-    conn= connector.connect(
-        "vernal-landing-411806:us-east1:campus-crunch",
-        "pymysql",
-        user="root",
-        password=db_password,
-        db="userData"
-    )
-    return conn
-# create connection pool
-pool = sqlalchemy.create_engine(
-    "mysql+pymysql://",
-    creator=getconn,
-)
-with pool.connect() as db_conn:
-    # Create Table
-    #db_conn.execute(text("CREATE TABLE IF NOT EXISTS userInfo(email text,dietaryRestrictions text,likedFoods text,dislikedFoods text,weight integer,dietGoals text)"))
-
-    #print("Done")
-
-    #db_conn.execute("INSERT INTO userInfo VALUES ('test', 'test', 'test', 'test', 50, 'test')")
-
-    result = db_conn.execute("SELECT * FROM userInfo").fetchall()
-
-    for row in result:
-        print(row)
-def addToLikedFoods(email, food):
-    with pool.connect() as db_conn:
-        db_conn.execute(text(f"UPDATE userInfo SET likedFoods = CONCAT(likedFoods, ',{food}') WHERE email = '{email}'"))
-def addToDislikedFoods(email, food):
-    with pool.connect() as db_conn:
-        db_conn.execute(text(f"UPDATE userInfo SET dislikedFoods = CONCAT(dislikedFoods, ',{food}') WHERE email = '{email}'"))
-def addDietaryRestrictions(email, restriction):
-    with pool.connect() as db_conn:
-        db_conn.execute(text(f"UPDATE userInfo SET dietaryRestrictions = CONCAT(dietaryRestrictions, ',{restriction}') WHERE email = '{email}'"))
-def setDietGoals(email, goal):
-    with pool.connect() as db_conn:
-        db_conn.execute(text(f"UPDATE userInfo SET dietGoals = '{goal}' WHERE email = '{email}'"))
-def setWeight(email, weight):
-    with pool.connect() as db_conn:
-        db_conn.execute(text(f"UPDATE userInfo SET weight = {weight} WHERE email = '{email}'"))
-def getLikedFoods(email):
-    with pool.connect() as db_conn:
-        result = db_conn.execute(text(f"SELECT likedFoods FROM userInfo WHERE email = '{email}'")).fetchall()
-        return result[0][0].split(',')
-def getDislikedFoods(email):
-    with pool.connect() as db_conn:
-        result = db_conn.execute(text(f"SELECT dislikedFoods FROM userInfo WHERE email = '{email}'")).fetchall()
-        return result[0][0].split(',')
-def getDietaryRestrictions(email):
-    with pool.connect() as db_conn:
-        result = db_conn.execute(text(f"SELECT dietaryRestrictions FROM userInfo WHERE email = '{email}'")).fetchall()
-        return result[0][0].split(',')
-def getDietGoals(email):
-    with pool.connect() as db_conn:
-        result = db_conn.execute(text(f"SELECT dietGoals FROM userInfo WHERE email = '{email}'")).fetchall()
-        return result[0][0].split(',')
-def getWeight(email):
-    with pool.connect() as db_conn:
-        result = db_conn.execute(text(f"SELECT weight FROM userInfo WHERE email = '{email}'")).fetchall()
-        return result[0][0]
-
-
 app = Flask(__name__)
 app.secret_key = env.get("APP_SECRET_KEY")
 
@@ -187,7 +86,7 @@ def login():
 def callback():
     token = oauth.auth0.authorize_access_token()
     session["user"] = token
-    return redirect("/new-user-info/")
+    return redirect("/settings/")
 
 
 @app.route("/logout/")
@@ -207,13 +106,10 @@ def logout():
     )
 
 
-@app.route("/new-user-info/")
-def new_user_info():
-    return render_template("new-user-info.html")
-
 @app.route("/nutritional-info/")
 def nutritional_info():
     return render_template("nutritional-info.html")
+
 
 @app.route("/settings/")
 def settings():
