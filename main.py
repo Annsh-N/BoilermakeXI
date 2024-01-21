@@ -4,7 +4,7 @@ from urllib.parse import quote_plus, urlencode
 
 from authlib.integrations.flask_client import OAuth
 from dotenv import find_dotenv, load_dotenv
-from flask import Flask, redirect, render_template, session, url_for
+from flask import Flask, redirect, render_template, session, url_for, request
 import sql_backend  # comment this thing
 
 ENV_FILE = find_dotenv()
@@ -86,7 +86,18 @@ def login():
 @app.route("/join_callback/", methods=["GET", "POST"])
 def join_callback():
     token = oauth.auth0.authorize_access_token()
+    sql_backend.addUser(token["userinfo"]["email"], "", "", "", 0, "", "", "", 0, 0, "")
     session["user"] = token
+    session["user"]["userinfo"]["sex"] = ""
+    session["user"]["userinfo"]["age"] = ""
+    session["user"]["userinfo"]["height"] = ""
+    session["user"]["userinfo"]["weight"] = ""
+    session["user"]["userinfo"]["activity"] = ""
+    session["user"]["userinfo"]["goal"] = ""
+    session["user"]["userinfo"]["preferences"] = ""
+    session["user"]["userinfo"]["allergens"] = ""
+    session["user"]["userinfo"]["likedMeals"] = ""
+    session["user"]["userinfo"]["disLikedMeals"] = ""
     return redirect("/settings/")
 
 
@@ -96,16 +107,16 @@ def login_callback():
     session["user"] = token
 
     info = sql_backend.onLogin(session["user"]["userinfo"]["email"])
-    session["user"]["userinfo"]["sex"] = info[0]
-    session["user"]["userinfo"]["age"] = info[0]
-    session["user"]["userinfo"]["height"] = info[0]
+    session["user"]["userinfo"]["sex"] = info[6]
+    session["user"]["userinfo"]["age"] = info[7]
+    session["user"]["userinfo"]["height"] = info[8]
     session["user"]["userinfo"]["weight"] = info[0]
-    session["user"]["userinfo"]["activity"] = info[1]
-    session["user"]["userinfo"]["goal"] = info[2]
-    session["user"]["userinfo"]["preferences"] = info[3]
-    session["user"]["userinfo"]["allergens"] = info[4]
-    session["user"]["userinfo"]["likedMeals"] = info[5]
-    session["user"]["userinfo"]["disLikedMeals"] = info[5]
+    session["user"]["userinfo"]["activity"] = info[9]
+    session["user"]["userinfo"]["goal"] = info[1]
+    session["user"]["userinfo"]["preferences"] = info[5]
+    session["user"]["userinfo"]["allergens"] = info[2]
+    session["user"]["userinfo"]["likedMeals"] = info[3]
+    session["user"]["userinfo"]["disLikedMeals"] = info[4]
     return redirect("/")
 
 
@@ -129,6 +140,12 @@ def logout():
 @app.route("/nutritional-info/")
 def nutritional_info():
     return render_template("nutritional-info.html")
+
+
+@app.route("/update-settings/", methods=["POST"])
+def update_settings():
+    sql_backend.updateSettings(session["user"]["userinfo"]["email"], request.form)
+    return redirect("/settings/")
 
 
 @app.route("/settings/")
