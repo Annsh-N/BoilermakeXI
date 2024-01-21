@@ -1,11 +1,11 @@
-# SQL Database
+#SQL Database
 #Import required dependencies
 from google.cloud.sql.connector import Connector
 import sqlalchemy
 from sqlalchemy import text
 from main import *
 
-# Function to get CloudSQL instance password from Secret Manager
+#Function to get CloudSQL instance password from Secret Manager
 def access_secret_version(project_id, secret_id, version_id):
     """
     Access the payload for the given secret version if one exists. The version
@@ -28,14 +28,14 @@ def access_secret_version(project_id, secret_id, version_id):
     payload = response.payload.data.decode("UTF-8")
     return payload
 
-# Function call to get DB password ino a local varaiable
+#Function call to get DB password ino a local varaiable
 db_password = access_secret_version('vernal-landing-411806', 'campus-crunch','1')
 
 
-# initialize Connector object
+#initialize Connector object
 connector = Connector()
 
-# function to return the database connection
+#function to return the database connection
 def getconn():
     conn= connector.connect(
         "vernal-landing-411806:us-east1:campus-crunch",
@@ -45,7 +45,7 @@ def getconn():
         db="userData"
     )
     return conn
-# create connection pool
+#create connection pool
 pool = sqlalchemy.create_engine(
     "mysql+pymysql://",
     creator=getconn,
@@ -69,6 +69,10 @@ dietaryRestrictions = ""
 likedFoods = ""
 dislikedFoods = ""
 dietaryPreferences = ""
+sex = ""
+age = 0
+height = 0
+activeness = ""
 user_info = []
 def onLogin(email):
 
@@ -81,7 +85,11 @@ def onLogin(email):
     likedFoods = getLikedFoods(email)
     dislikedFoods = getDislikedFoods(email)
     dietaryPreferences = getDietaryPreferences(email)
-    return [weight, dietGoals, dietaryRestrictions, likedFoods, dislikedFoods, dietaryPreferences]
+    sex = getSex(email)
+    age = getAge(email)
+    height = getHeight(email)
+    activeness = getActiveness(email)
+    return [weight, dietGoals, dietaryRestrictions, likedFoods, dislikedFoods, dietaryPreferences, sex, age, height, activeness]
 
 def getWeight(email):
     return user_info[4]
@@ -95,6 +103,26 @@ def getLikedFoods(email):
     return user_info[2]
 def getDislikedFoods(email):
     return user_info[3]
+def getSex(email):
+    return user_info[7]
+def getAge(email):
+    return user_info[8]
+def getHeight(email):
+    return user_info[9]
+def getActiveness(email):
+    return user_info[10]
+def setSex(email, sex):
+    db_conn.execute(text(f"UPDATE userInfo SET weight = {weight} WHERE email = '{email}'"))
+    db_conn.commit()
+def setAge(email, age):
+    db_conn.execute(text(f"UPDATE userInfo SET weight = {weight} WHERE email = '{email}'"))
+    db_conn.commit()
+def setHeight(email, height):
+    db_conn.execute(text(f"UPDATE userInfo SET weight = {weight} WHERE email = '{email}'"))
+    db_conn.commit()
+def setActiveness(email, activeness):
+    db_conn.execute(text(f"UPDATE userInfo SET weight = {weight} WHERE email = '{email}'"))
+    db_conn.commit()
 def setWeight(email, weight):
     db_conn.execute(text(f"UPDATE userInfo SET weight = {weight} WHERE email = '{email}'"))
     db_conn.commit()
@@ -113,6 +141,6 @@ def addToDislikedFoods(email, food):
 def addDietaryPreferences(email, food):
     db_conn.execute(text(f"UPDATE userInfo SET dietaryPreferences = '{food}' WHERE email = '{email}'"))
     db_conn.commit()
-def addUser(email, dietaryRestrictions, likedFoods, dislikedFoods, weight, dietGoals, dietaryPreferences):
-    db_conn.execute(text(f"INSERT INTO userInfo VALUES ('{email}', '{dietaryRestrictions}', '{likedFoods}', '{dislikedFoods}', {weight}, '{dietGoals}', '{dietaryPreferences}')"))
+def addUser(email, dietaryRestrictions, likedFoods, dislikedFoods, weight, dietGoals, dietaryPreferences, sex, age, height, activeness):
+    db_conn.execute(text(f"INSERT INTO userInfo VALUES ('{email}', '{dietaryRestrictions}', '{likedFoods}', '{dislikedFoods}', {weight}, '{dietGoals}', '{dietaryPreferences}', '{sex}', {age}, {height}, '{activeness}')"))
     db_conn.commit()
