@@ -62,13 +62,18 @@ def terms():
 
 @app.route("/join/")
 def join():
-    return render_template("join.html")
+    return oauth.auth0.authorize_redirect(
+        redirect_uri=url_for("callback", _external=True), screen_hint="signup"
+    )
 
 
 @app.route("/login/")
 def login():
     return oauth.auth0.authorize_redirect(
-        redirect_uri=url_for("callback", _external=True)
+        redirect_uri=url_for(
+            "callback",
+            _external=True,
+        )
     )
 
 

@@ -37,21 +37,24 @@
             <li><a href="/"><button class="ripple-yellow">Diet Generator</button></a></li>
             <li><a href="/menus/"><button class="ripple-yellow">Menus</button></a></li>
         </ul>
-          <ul class="topnav" style="float: right">
-            <li id="nav-join-li"><button id="open-join-menu" class="ripple-yellow nav-ripple-white">Join</button></li>
-            <li id="nav-login-li"><a href="/login/"><button id="open-login-menu" class="ripple-yellow nav-ripple-white">Login</button></a></li>
-          </ul>
-          <ul class="account-topnav" style="float: right">
-            <li id="nav-profile-li">
-              <div class="dropdown">
-                <button onclick="showProfileDropDown()" id="profile-dropbutton" class="ripple-yellow nav-ripple-white dropbtn"><span class="material-icons-outlined">account_circle</span></button>
-                <div id="profile-dropdown-content" class="dropdown-content">
-                  <a href="/settings/" class="ripple-dark" id="dropdown-link-settings">Settings</a>
-                  <a href="/logout/" class="ripple-dark" id="dropdown-link-logout">Logout</a>
-                </div>
+        {% if session %}
+        <ul class="account-topnav" style="float: right">
+          <li id="nav-profile-li">
+            <div class="dropdown">
+              <button onclick="showProfileDropDown()" id="profile-dropbutton" class="ripple-yellow nav-ripple-white dropbtn"><span class="material-icons-outlined">account_circle</span></button>
+              <div id="profile-dropdown-content" class="dropdown-content">
+                <a href="/settings/" class="ripple-dark" id="dropdown-link-settings">Settings</a>
+                <a href="/logout/" class="ripple-dark" id="dropdown-link-logout">Logout</a>
               </div>
-            </li>
-          </ul>
+            </div>
+          </li>
+        </ul>
+        {% else %}
+        <ul class="topnav" style="float: right">
+          <li id="nav-join-li"><a href="/join/"><button id="open-join-menu" class="ripple-yellow nav-ripple-white">Join</button></a></li>
+          <li id="nav-login-li"><a href="/login/"><button id="open-login-menu" class="ripple-yellow nav-ripple-white">Login</button></a></li>
+        </ul>
+        {% endif %}
         <ul class="short-topnav" style="float: right">
           <li><button id="topnav-menu" class="ripple-yellow material-icons-outlined menu">Menus</button></li>
         </ul>
@@ -63,14 +66,13 @@
               <a href="/menus/"><button class="ripple-yellow short-menu-link">Menus</button></a>
           </div>
           <div class="short-menu-links" id="bottom-short-menu-links">
-            <button id="open-short-join-menu" class="ripple-yellow short-menu-link">Join</button>
-            <a href="/login"><button id="open-short-login-menu" class="ripple-yellow short-menu-link">Login</button></a>
+            <a href="/join/"><button id="open-short-join-menu" class="ripple-yellow short-menu-link">Join</button></a>
+            <a href="/login/"><button id="open-short-login-menu" class="ripple-yellow short-menu-link">Login</button></a>
           </div>
         </div>
       </div>
     </div>
     <script src="/static/js/header.js"></script>
-
     <div id="slide-1">
       <div class="container" id="container">
         <div class="slide-left" id="slide-left">
