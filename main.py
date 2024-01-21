@@ -5,7 +5,7 @@ from urllib.parse import quote_plus, urlencode
 from authlib.integrations.flask_client import OAuth
 from dotenv import find_dotenv, load_dotenv
 from flask import Flask, redirect, render_template, session, url_for
-
+import sql_backend # comment this thing
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
@@ -93,6 +93,14 @@ def join_callback():
 def login_callback():
     token = oauth.auth0.authorize_access_token()
     session["user"] = token
+    # get email from token
+    info = sql_backend.onLogin(session["user"]["userinfo"]["email"])
+    session["user"]["userinfo"]["weight"] = info[0]
+    session["user"]["userinfo"]["dietGoals"] = info[1]
+    session["user"]["userinfo"]["dietaryRestrictions"] = info[2]
+    session["user"]["userinfo"]["likedFoods"] = info[3]
+    session["user"]["userinfo"]["dislikedFoods"] = info[4]
+    session["user"]["userinfo"]["dietaryPreferences"] = info[5]
     return redirect("/")
 
 
