@@ -103,7 +103,7 @@ def login_callback():
     session["user"]["userinfo"]["activity"] = info[1]
     session["user"]["userinfo"]["goal"] = info[2]
     session["user"]["userinfo"]["preferences"] = info[3]
-    session["user"]["userinfo"]["allergen"] = info[4]
+    session["user"]["userinfo"]["allergens"] = info[4]
     session["user"]["userinfo"]["likedMeals"] = info[5]
     session["user"]["userinfo"]["disLikedMeals"] = info[5]
     return redirect("/")
