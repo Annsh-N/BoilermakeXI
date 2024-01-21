@@ -14,8 +14,8 @@
     <link rel="icon" href="/static/img/logo-original.png" type="image/png" />
     <title>Campus Crunch</title>
     <link rel="stylesheet" href="/static/css/ripple.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/settings.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/settings.css" type="text/css">
   </head>
   <body>
     <div id="menu-background"></div>
@@ -130,10 +130,34 @@
           <button class="bulking-goal ripple-dark unactive">Bulking<br/><span class="activity-description">Increasing calorie intake to build muscle mass and gain weight</span></button>
         </div>
 
-        <div class="buttons-container">
-          <button class="ripple-dark" id="resetButton" onclick="resetPreferences()">Reset</button>
-          <button class="ripple-dark" id="submitButton" onclick="submitPreferences()">Submit</button>
+        <br>
+        <div class="block-label preference-label">Preferences:</div>
+        <div class="preference-buttons">
+          <button class="vegetarian-pref ripple-dark unactive">Vegetarian</button>
+          <button class="vegan-pref ripple-dark unactive">Vegan</button>
+          <button class="no-pref ripple-dark unactive">No Preference</button>
         </div>
+
+        <br>
+        <div class="block-label allergen-label">Allergen:</div>
+        <div class="allergen-buttons">
+          <button class="vegetarian-pref ripple-dark unactive">Coconut</button>
+          <button class="vegan-pref ripple-dark unactive">Eggs</button>
+          <button class="no-pref ripple-dark unactive">Fish</button>
+          <button class="vegetarian-pref ripple-dark unactive">Gluten</button>
+          <button class="vegan-pref ripple-dark unactive">Milk</button>
+          <button class="no-pref ripple-dark unactive">Peanuts</button>
+          <button class="vegetarian-pref ripple-dark unactive">Sesame</button>
+          <button class="vegan-pref ripple-dark unactive">Shellfish</button>
+          <button class="no-pref ripple-dark unactive">Soy</button>
+          <button class="vegetarian-pref ripple-dark unactive">Tree Nuts</button>
+          <button class="vegan-pref ripple-dark unactive">Wheat</button>
+        </div>
+
+      <div class="buttons-container">
+        <button class="ripple-dark" id="resetButton" onclick="resetPreferences()">Reset</button>
+        <button class="ripple-dark" id="submitButton" onclick="submitPreferences()">Submit</button>
+      </div>
     </div>
 
     <div id="footer-offset-calculator"></div>

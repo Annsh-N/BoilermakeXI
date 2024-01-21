@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const sexButtons = document.querySelectorAll(".sex-option");
     const activityButtons = document.querySelectorAll(".activity-buttons button");
+    const goalButtons = document.querySelectorAll(".goal-buttons button");
+    const preferenceButtons = document.querySelectorAll(".preference-buttons button");
+    const allergenButtons = document.querySelectorAll(".allergen-buttons button");
     const ageSlider = document.getElementById("age");
     const ageValue = document.getElementById("age-value");
 
@@ -8,11 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             // Reset all buttons to default style
             sexButtons.forEach(btn => {
-                btn.classList.remove("male", "female", "rather_not_say");
+                btn.classList.remove("active");
+                btn.classList.remove("unactive");
+                btn.classList.add("unactive");
             });
 
             // Apply selected style to the clicked button
-            button.classList.add(button.dataset.value);
+            button.classList.remove("unactive");
+            button.classList.add("active");
         });
     });
 
@@ -20,13 +26,56 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function() {
             // Reset all buttons to default style
             activityButtons.forEach(btn => {
-                btn.style.backgroundColor = "#ffffff";
-                btn.style.color = "#00aa00";
+                btn.classList.remove("active");
+                btn.classList.remove("unactive");
+                btn.classList.add("unactive");
             });
 
             // Apply selected style to the clicked button
-            button.style.backgroundColor = "#00aa00";
-            button.style.color = "#ffffff";
+            button.classList.remove("unactive");
+            button.classList.add("active");
+        });
+    });
+
+    goalButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            // Reset all buttons to default style
+            goalButtons.forEach(btn => {
+                btn.classList.remove("active");
+                btn.classList.remove("unactive");
+                btn.classList.add("unactive");
+            });
+
+            // Apply selected style to the clicked button
+            button.classList.remove("unactive");
+            button.classList.add("active");
+        });
+    });
+
+    preferenceButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            // Reset all buttons to default style
+            preferenceButtons.forEach(btn => {
+                btn.classList.remove("active");
+                btn.classList.remove("unactive");
+                btn.classList.add("unactive");
+            });
+
+            // Apply selected style to the clicked button
+            button.classList.remove("unactive");
+            button.classList.add("active");
+        });
+    });
+
+    allergenButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            if (button.classList.contains("active")) {
+                button.classList.remove("active");
+                button.classList.add("unactive");
+            } else {
+                button.classList.remove("unactive");
+                button.classList.add("active");
+            }
         });
     });
 

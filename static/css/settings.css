@@ -1,3 +1,13 @@
+.menu-title {
+    display: inline-block;
+    font-size: 30pt;
+    font-family: "Karla Bold";
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #05A85C;
+    width: 100%;
+}
+ 
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -9,7 +19,7 @@ body {
 
 .container {
     background-color: #ffffff;
-    border: 2px solid #00aa00;
+    border: 2px solid #05A85C;
     padding: 20px;
     padding-bottom: 10px;
     border-radius: 10px;
@@ -21,7 +31,7 @@ body {
 
 .title {
     text-align: center;
-    color: #28a745; /* Green text color */
+    color: #05A85C; /* Green text color */
     font-size: 40px; /* Adjust the font size as needed */
     margin-bottom: 20px; /* Add margin at the bottom */
 }
@@ -30,11 +40,12 @@ body {
     margin-bottom: 15px; /* Add margin at the bottom */
 }
 
-.activity-label {
+.activity-label, .goal-label, .preference-label, .allergen-label {
+    font-family: "Karla";
     display: block;
     width: 100%;
     text-align: left;
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 .form-group .block-label {
@@ -42,7 +53,7 @@ body {
     margin-bottom: 5px; /* Add margin between label and input */
     text-align: left;
     font-size: 12pt;
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 .form-group .inline-label {
@@ -50,7 +61,7 @@ body {
     margin-bottom: 5px; /* Add margin between label and input */
     text-align: left;
     font-size: 12pt;
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 .form-group input {
@@ -72,18 +83,23 @@ body {
     padding: 10px;
     margin: 0;
     background-color: #ffffff;
-    color: #00aa00;
-    border: 1px solid #00aa00;
+    color: #05A85C;
+    border: 1px solid #05A85C;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.sex-option.male {
+.sex-option:hover {
+    background-color: #05A85C;
+    color: #fff;
+}
+
+.sex-option.active {
     /* Styles for Male button when clicked */
-    background-color: #0000ff;
+    background-color: #05A85C;
     color: #ffffff;
-    border-color: #0000ff;
+    border-color: #05A85C;
 }
 
 .sex-option.female {
@@ -120,21 +136,30 @@ body {
     margin-left: -5px;
 }
 
-.activity-buttons button {
+.activity-buttons .unactive, .goal-buttons .unactive, .preference-buttons .unactive, .allergen-buttons .unactive, .activity-buttons .active, .goal-buttons .active, .preference-buttons .active, .allergen-buttons .active {
     width: 239px;
     padding: 10px;
     margin-top: 10px;
     background-color: #ffffff;
-    color: #00aa00;
-    border: 1px solid #00aa00;
+    color: #05A85C;
+    border: 1px solid #05A85C;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
-.activity-buttons button:hover {
-    background-color: #00aa00;
+.activity-buttons .active, .goal-buttons .active, .preference-buttons .active , .allergen-buttons .active {
+    background-color: #05A85C;
     color: #ffffff;
+}
+
+.activity-buttons .unactive:hover, .goal-buttons .unactive:hover, .preference-buttons .unactive:hover , .allergen-buttons .unactive:hover {
+    background-color: #05A85C;
+    color: #ffffff;
+}
+
+.activity-buttons .unactive:hover .activity-description, .goal-buttons .unactive:hover .activity-description, .preference-buttons .unactive:hover .activity-description, .allergen-buttons .unactive:hover .activity-description {
+    color: #fff;
 }
 
 .moderate-activity {
@@ -142,9 +167,26 @@ body {
     margin-right: 10px;
 }
 
-.activity-description {
+.maintaining-goal {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.vegan-pref {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.unactive .activity-description {
     font-size: 12px;
     color: #777777;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.active .activity-description {
+    font-size: 12px;
+    color: #ffffff;
+    transition: 0.3s;
 }
 
 .buttons-container {
@@ -152,22 +194,23 @@ body {
     margin-top: 30px; /* Add margin to separate from the content */
 }
 
-#resetButton {
-    background-color: #ffffff; /* White background */
-    color: #28a745; /* Green text color */
-    border: 2px solid #28a745; /* Green outline */
+#submitButton, #resetButton {
+    font-family: "Karla";
+    background-color: #05A85C; /* Green background */
+    color: #ffffff; /* White text color */
+    border: 2px solid #05A85C; /* No border */
     border-radius: 5px; /* Rounded corners */
-    padding: 8px 16px; /* Padding for better appearance */
-    margin-right: 50px; /* Add margin between buttons */
+    padding: 10px 16px; /* Padding for better appearance */
+    font-size: 12pt;
+    cursor: pointer;
 }
 
-#submitButton {
-    background-color: #28a745; /* Green background */
-    color: #ffffff; /* White text color */
-    font-weight: bold; /* Bold text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 8px 16px; /* Padding for better appearance */
+#resetButton {
+    background: #fff;   
+    border: 2px solid #05A85C; /* No border */
+    color: #05A85C;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 .select-goal-container {
@@ -176,7 +219,7 @@ body {
 }
 
 .select-goal-container label {
-    color: green;
+    color: #05A85C;
     font-weight: bold;
 }
 
@@ -187,10 +230,10 @@ body {
 
 .goal-button {
     flex: 1;
-    border: 2px solid green;
+    border: 2px solid #05A85C;
     border-radius: 10px;
     background-color: white;
-    color: green;
+    color: #05A85C;
     padding: 10px;
     cursor: pointer;
 }
@@ -200,12 +243,12 @@ body {
 }
 
 .goal-button:hover {
-    background-color: green;
+    background-color: #05A85C;
     color: white;
 }
 
 .goal-button.selected {
-    background-color: green;
+    background-color: A#05A85C;
     color: white;
 }
 
@@ -223,13 +266,14 @@ body {
 
 #age {
     display: inline-block;
-    width: 120px;
+    width: 204px;
     border-radius: 5px;
+    margin-right: 10px;
 }
 
 #height {
     display: inline-block;
-    width: 140px;
+    width: 137px;
 }
 
 #weight {
@@ -243,4 +287,52 @@ body {
 
 input:focus {
     outline: none;
+}
+
+.form-data {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+    height: 37px;
+}
+
+#age-group {
+    position: absolute;
+    top: 0;
+    left: 0px;
+}
+
+#height-group {
+    position: absolute;
+    top: 0px;
+    left: 255px;;
+}
+
+#weight-group {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+label, input, button {
+    font-family: Karla
+}
+
+.form-group select[multiple] {
+    width: 100%; /* Full width */
+    padding: 8px; /* Padding similar to other input fields */
+    border: 1px solid #dddddd; /* Grey border, similar to other input fields */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in total width */
+    font-family: Arial, sans-serif; /* Consistent font family */
+    font-size: 12pt; /* Similar font size to other inputs */
+    background-color: #ffffff; /* White background */
+    margin-bottom: 15px; /* Spacing below the select box */
+    cursor: pointer; /* Cursor to indicate it's clickable */
+}
+
+.form-group select[multiple]:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #05A85C; /* Change border color on focus, similar to the theme color */
 }
