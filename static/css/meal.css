@@ -4,6 +4,7 @@
    height: 50px;
    margin-left: auto;
    margin-right: auto;
+   margin-top: -30px;
 }
 
 .menu-title {
@@ -96,6 +97,7 @@
    color: white;
    opacity: 1;
    cursor: pointer;
+   user-select: none;
 }
 
 .dislike {

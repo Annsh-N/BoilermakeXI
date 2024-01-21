@@ -14,11 +14,8 @@
     <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
     <title>Campus Crunch</title>
     <link rel="stylesheet" href="/static/css/ripple.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/index.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
-
- 
-    <link rel="stylesheet" href="/static/css/new-user-info.css">
+    <link rel="stylesheet" href="/static/css/new-user-info.css" type="text/css">
 </head>
 <body>
     <div id="menu-background"></div>
@@ -81,7 +78,7 @@
     <div class="container">
 
         <div class="form-group">
-            <label for="sex">Sex:</label>
+            <label class="block-label" for="sex">Sex:</label>
             <div class="sex-buttons">
                 <button class="sex-option" data-value="male">Male</button>
                 <button class="sex-option" data-value="female">Female</button>
@@ -89,21 +86,23 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="ageInput">Age:</label>
-            <input type="number" id="ageInput" class="rounded-input" placeholder="Enter your age" oninput="validateAgeInput(this)">
+        <div class="form-group inline-group">
+            <label class="inline-label" for="ageInput">Age:</label>
+            <div class="input-with-unit">
+              <input type="text" id="age" class="rounded-input" placeholder="Enter your age" oninput="validateAgeInput(this)">
+            </div>
         </div>             
 
-        <div class="form-group">
-            <label for="height">Height:</label>
+        <div class="form-group inline-group">
+            <label class="inline-label" for="height">Height:</label>
             <div class="input-with-unit">
                 <input type="text" id="height" name="height" placeholder="Enter your height" oninput="validateHeightInput(this)">
                 <span class="unit">cms</span>
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="weight">Weight:</label>
+        <div class="form-group inline-group">
+            <label class="inline-label" for="weight">Weight:</label>
             <div class="input-with-unit">
                 <input type="text" id="weight" name="weight" placeholder="Enter your weight" oninput="validateWeightInput(this)">
                 <span class="unit">lbs</span>
@@ -111,9 +110,17 @@
         </div>
 
         <div class="activity-buttons">
-            <button class="light-activity">Light Activity<br/><span class="activity-description">1-3 days of exercise per week</span></button>
-            <button class="moderate-activity">Moderate Activity<br/><span class="activity-description">3-5 days of exercise per week</span></button>
-            <button class="heavy-activity">Heavy Activity<br/><span class="activity-description">6-7 days of exercise per week</span></button>
+        <label class="block-label activity-label" for="activity">Activity:</label>
+          <button class="light-activity">Light Activity<br/><span class="activity-description">1-3 days of exercise per week</span></button>
+          <button class="moderate-activity">Moderate Activity<br/><span class="activity-description">3-5 days of exercise per week</span></button>
+          <button class="heavy-activity">Heavy Activity<br/><span class="activity-description">6-7 days of exercise per week</span></button>
+        </div>
+
+        <div class="activity-buttons">
+        <label class="block-label activity-label" for="activity">Goal:</label>
+          <button class="light-activity">Light Activity<br/><span class="activity-description">1-3 days of exercise per week</span></button>
+          <button class="moderate-activity">Moderate Activity<br/><span class="activity-description">3-5 days of exercise per week</span></button>
+          <button class="heavy-activity">Heavy Activity<br/><span class="activity-description">6-7 days of exercise per week</span></button>
         </div>
 
         <div class="select-goal-container">
@@ -131,6 +138,31 @@
         </div>
     </div>
 
+    <div id="footer-offset-calculator"></div>
+    <div class="footer" id="footer">
+      <div class="footer-links">
+        <div class="footer-section left">
+          <div class="footer-subtitle">Resources</div>
+          <a href="/" class="footer-link">Home</a>
+          <a href="/diet-generator/" class="footer-link">Diet Generator</a>
+          <a href="/menus/" class="footer-link">Menus</a>
+        </div>
+        <div class="footer-section centre">
+          <div class="footer-subtitle">Members</div>
+          <a href="/join/" class="footer-link">Join</a>
+          <a href="/login/" class="footer-link">Login</a>
+          <a href="/settings/" class="footer-link">Settings</a>
+        </div>
+        <div class="footer-section right">
+          <div class="footer-subtitle">About</div>
+          <a href="/about-us/" class="footer-link">About Us</a>
+        </div>
+      </div>
+      <div id="footer-credit" class="footer-credit" style="height: 20px"></div>
+    </div>
+
+    <script src="/static/js/footer.js"></script>
+    <script src="/static/js/ripple.js"></script>
     <script src="/static/js/new-user-info.js"></script>
-</body>
+  </body>
 </html>

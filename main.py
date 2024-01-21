@@ -86,7 +86,7 @@ def login():
 def callback():
     token = oauth.auth0.authorize_access_token()
     session["user"] = token
-    return redirect("http://127.0.0.1:3000")
+    return redirect("/new-user-info/")
 
 
 @app.route("/logout/")

@@ -9,7 +9,7 @@ body {
 
 .container {
     background-color: #ffffff;
-    border: 1px solid #00aa00;
+    border: 2px solid #00aa00;
     padding: 20px;
     padding-bottom: 10px;
     border-radius: 10px;
@@ -30,9 +30,27 @@ body {
     margin-bottom: 15px; /* Add margin at the bottom */
 }
 
-.form-group label {
+.activity-label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.form-group .block-label {
     display: block; /* Ensure the label is on its own line */
     margin-bottom: 5px; /* Add margin between label and input */
+    text-align: left;
+    font-size: 12pt;
+    margin-left: 10px;
+}
+
+.form-group .inline-label {
+    display: inline-block; /* Ensure the label is on its own line */
+    margin-bottom: 5px; /* Add margin between label and input */
+    text-align: left;
+    font-size: 12pt;
+    margin-left: 10px;
 }
 
 .form-group input {
@@ -83,7 +101,7 @@ body {
 }
 
 .input-with-unit {
-    display: flex;
+    display: inline-block;
 }
 
 .input-with-unit input[type="text"] {
@@ -95,13 +113,15 @@ body {
 
 .unit {
     background-color: #cccccc;
-    padding: 10px;
-    border: 1px solid #cccccc;
+    padding: 8px;
+    border-top: 0.5px solid #cccccc;
+    border-bottom: 3px solid #cccccc;
     border-radius: 0 5px 5px 0;
+    margin-left: -5px;
 }
 
 .activity-buttons button {
-    width: 100%;
+    width: 239px;
     padding: 10px;
     margin-top: 10px;
     background-color: #ffffff;
@@ -115,6 +135,11 @@ body {
 .activity-buttons button:hover {
     background-color: #00aa00;
     color: #ffffff;
+}
+
+.moderate-activity {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .activity-description {
@@ -194,4 +219,28 @@ body {
 
 #maintainButton {
     border-radius: 0 10px 10px 0;
+}
+
+#age {
+    display: inline-block;
+    width: 120px;
+    border-radius: 5px;
+}
+
+#height {
+    display: inline-block;
+    width: 140px;
+}
+
+#weight {
+    display: inline-block;
+    width: 140px;
+}
+
+.inline-group {
+    display: inline-block;
+}
+
+input:focus {
+    outline: none;
 }
