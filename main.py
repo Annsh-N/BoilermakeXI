@@ -30,9 +30,9 @@ def home():
     return render_template("index.html", session=session.get("user"))
 
 
-@app.route("/main/")
-def main():
-    return render_template("main.html")
+@app.route("/diet-generator/")
+def diet_generator():
+    return render_template("diet-generator.html")
 
 
 @app.route("/meal/")
