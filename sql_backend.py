@@ -113,3 +113,6 @@ def addToDislikedFoods(email, food):
 def addDietaryPreferences(email, food):
     db_conn.execute(text(f"UPDATE userInfo SET dietaryPreferences = '{food}' WHERE email = '{email}'"))
     db_conn.commit()
+def addUser(email, dietaryRestrictions, likedFoods, dislikedFoods, weight, dietGoals, dietaryPreferences):
+    db_conn.execute(text(f"INSERT INTO userInfo VALUES ('{email}', '{dietaryRestrictions}', '{likedFoods}', '{dislikedFoods}', {weight}, '{dietGoals}', '{dietaryPreferences}')"))
+    db_conn.commit()
