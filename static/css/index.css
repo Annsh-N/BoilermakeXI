@@ -316,3 +316,35 @@
   width: 10px;
   background: red;
 }
+
+.calendar-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #FFFFFF;
+  color: #61C056;
+  cursor: pointer;
+  margin: auto
+}
+
+.icon-calendar {
+  background: src('/static/imag/calendar.png') center center no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+#date-picker {
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#date-box {
+  display: flex; 
+  justify-content: center;
+  margin-top: 10%;
+}

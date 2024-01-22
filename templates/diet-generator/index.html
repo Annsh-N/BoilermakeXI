@@ -82,6 +82,18 @@
       <a href="/settings/" class="material-icons ripple-light select-preferences">tune</a>
     </div>
 
+    <!--Date Button-->
+    <div id="date-box">
+      <div class="calendar-button" onclick="openDatePicker()">
+        <i class="icon-calendar"></i>
+        <span id="selected-date">Select Date</span>
+      </div>
+    
+      <div id="date-picker" class="hidden">
+          <input type="date" id="datepicker" onchange="updateSelectedDate()">
+      </div>
+    </div>
+
     <!--Preferences Button-->
     
     <div class="tables">
@@ -205,5 +217,6 @@
 
     <script src="/static/js/footer.js"></script>
     <script src="/static/js/ripple.js"></script>
+    <script src="/static/js/index.js"></script>
   </body>
 </html>
